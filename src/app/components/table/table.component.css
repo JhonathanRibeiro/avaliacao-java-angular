@@ -1,31 +1,37 @@
 .full-width-table {
-    width: 100%;
-}
-
-.edit {
-    margin-right: 1em;
+width: 100%;
 }
 
 .actions {
-    opacity: 0;
+opacity: 0;
 }
 
 tr:hover .actions {
-    opacity: 1;    
+opacity: 1;    
 }
 
-.edit>i {
-    padding: 10px;
-    font-size: 13px;
-    border: 1px solid;
+.mat-flat-button.mat-accent, .mat-raised-button.mat-accent, .mat-fab.mat-accent, .mat-mini-fab.mat-accent {
+    background-color: transparent!important;
+    color: #474747d1;
+    width: 30px;
+    height: 30px;
+}
+.mat-button-wrapper{
+    padding: 0!important;
+    margin: 0!important;
+}
+.mat-fab{padding: 0!important;margin: 0!important;}
+.material-icons {
+    font-size: 17px;
+}
+.ui-button {
+    width: 50px;
     border-radius: 50%;
-    color: #d39309;
+    margin-right: 0.75em!important;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
 }
 
-.delete>i {
-    padding: 10px;
-    font-size: 13px;
-    border: 1px solid;
-    border-radius: 50%;
-    color: #e35e6b;
+.ui-button > i {
+color: #434343;
+font-size: 11px;
 }

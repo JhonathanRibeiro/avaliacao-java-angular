@@ -26,6 +26,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { DocumentacaoComponent } from './pages/documentacao/documentacao.component';
+import { VisualizaboletimComponent } from './components/visualizaboletim/visualizaboletim.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { DocumentacaoComponent } from './pages/documentacao/documentacao.compone
     UpdateComponent,
     LoadingComponent,
     TableComponent,
-    DocumentacaoComponent
+    DocumentacaoComponent,
+    VisualizaboletimComponent
   ],
   imports: [
     BrowserModule,
