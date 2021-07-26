@@ -1,6 +1,6 @@
 {
   "name": "projeto-avaliacao-ids",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -10,11 +10,12 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~12.0.4",
+    "@angular/animations": "^12.0.5",
     "@angular/common": "~12.0.4",
     "@angular/compiler": "~12.0.4",
     "@angular/core": "~12.0.4",
     "@angular/forms": "~12.0.4",
+    "@angular/material": "^12.1.3",
     "@angular/platform-browser": "~12.0.4",
     "@angular/platform-browser-dynamic": "~12.0.4",
     "@angular/router": "~12.0.4",
@@ -24,8 +25,10 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~12.0.4",
+    "@angular/cdk": "^12.1.3",
     "@angular/cli": "~12.0.4",
     "@angular/compiler-cli": "~12.0.4",
+    "@angular/flex-layout": "^12.0.0-beta.34",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
     "jasmine-core": "~3.7.0",

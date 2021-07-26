@@ -1,0 +1,13 @@
+.diario .title {
+    color: #434343;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.criar {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    z-index: 10;
+}

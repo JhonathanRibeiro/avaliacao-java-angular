@@ -1,0 +1,122 @@
+{
+  "alunos": [
+    {
+      "id": 1,
+      "nome": "Pedro Nogueira"
+    },
+    {
+      "id": 2,
+      "nome": "Maria Tavares"
+    },
+    {
+      "id": 3,
+      "nome": "João da Silva"
+    },
+    {
+      "id": 4,
+      "nome": "José Queiroz"
+    },
+    {
+      "id": 5,
+      "nome": "Isabella V Siqueira"
+    },
+    {
+      "nome": "Armando Nogueira Filho",
+      "id": 6
+    },
+    {
+      "nome": "Aluno teste",
+      "id": 7
+    },
+    {
+      "nome": "Aluno teste",
+      "id": 8
+    },
+    {
+      "nome": "Aluno teste",
+      "id": 9
+    },
+    {
+      "nome": "Aluno teste",
+      "id": 10
+    },
+    {
+      "nome": "Aluno teste",
+      "id": 11
+    },
+    {
+      "nome": "Aluno teste",
+      "id": 12
+    },
+    {
+      "nome": "Isaque Dias Mor",
+      "id": 13
+    }
+  ],
+  "boletim": [
+    {
+      "id": 1,
+      "aluno": "Jhonathan Ribeiro",
+      "avaliacoes": [
+        {
+          "id": 1,
+          "descricao": "Participação em sala de aula",
+          "peso": 1.5,
+          "notafinal": 1.2
+        },
+        {
+          "id": 2,
+          "descricao": "Entrega das tarefas",
+          "peso": 2.5,
+          "notafinal": 1.5
+        },
+        {
+          "id": 3,
+          "descricao": "Trabalho bimestral",
+          "peso": 3,
+          "notafinal": 1.9
+        },
+        {
+          "id": 4,
+          "descricao": "Prova bimestral",
+          "peso": 3,
+          "notafinal": 1.7
+        }
+      ],
+      "faltas": 89,
+      "situacao": ""
+    },
+    {
+      "aluno": "Isabella V. Siqueira",
+      "avaliacoes": [
+        {
+          "id": 1,
+          "descricao": "Participação em sala de aula",
+          "peso": 1.5,
+          "notafinal": 1.2
+        },
+        {
+          "id": 2,
+          "descricao": "Entrega das tarefas",
+          "peso": 2.5,
+          "notafinal": 1.5
+        },
+        {
+          "id": 3,
+          "descricao": "Trabalho bimestral",
+          "peso": 3,
+          "notafinal": 1.9
+        },
+        {
+          "id": 4,
+          "descricao": "Prova bimestral",
+          "peso": 3,
+          "notafinal": 1.7
+        }
+      ],
+      "faltas": 29,
+      "situacao": "",
+      "id": 2
+    }
+  ]
+}

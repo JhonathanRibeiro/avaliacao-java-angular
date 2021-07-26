@@ -1,0 +1,36 @@
+.full-width-table {
+    width: 100%;
+}
+
+.edit {
+    margin-right: 1em;
+}
+
+.edit,
+.delete {
+    display: none;
+}
+
+tr:hover {
+    background: #3333;
+}
+
+tr:hover .edit {
+    display: block;
+}
+
+.edit>i {
+    padding: 10px;
+    font-size: 13px;
+    border: 1px solid;
+    border-radius: 50%;
+    color: #d39309;
+}
+
+.delete>i {
+    padding: 10px;
+    font-size: 13px;
+    border: 1px solid;
+    border-radius: 50%;
+    color: #e35e6b;
+}

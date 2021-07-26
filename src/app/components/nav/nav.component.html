@@ -1,0 +1,42 @@
+<mat-sidenav-container class="container" autosize>
+    <mat-sidenav #sidenav class="sidenav" mode="side" opened fixedInViewport="true">
+        <mat-nav-list class="nav-list">
+            <div class="text-white" fxLayout="row" fxLayoutGap="10px">
+                <div fxLayoutAlign="center center">
+                    <mat-list-item (click)="isExpanded = !isExpanded">
+                        <i class="material-icons">format_align_justify</i>
+                    </mat-list-item>
+                </div>
+                <div fxLayoutAlign="center center" *ngIf="isExpanded">
+                    <mat-list-item>
+                        <img class="logo" src="assets/img/educacao.png" alt="logo">
+                    </mat-list-item>
+                </div>
+                <div fxLayoutAlign="center center" *ngIf="isExpanded">
+                    <span>
+                        Educação<br>
+                        <span>1.0.0</span>
+                    </span>
+                </div>
+            </div>
+
+            <mat-list-item routerLink="/diario-escolar">
+                <i class="material-icons">sticky_note_2</i>
+                <span *ngIf="isExpanded">Diário escolar</span>
+            </mat-list-item>
+            <mat-list-item routerLink="/documentacao">
+                <i class="material-icons">sticky_note_2</i>
+                <span *ngIf="isExpanded">Documentação</span>
+            </mat-list-item>
+
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <app-header></app-header>
+        <div class="content">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+
+</mat-sidenav-container>
