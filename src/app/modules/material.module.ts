@@ -10,7 +10,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input'
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSelectModule } from '@angular/material/select';
+import { MatExpansionModule } from '@angular/material/expansion';
+
 import { FlexModule } from '@angular/flex-layout/flex';
 import { GridModule } from '@angular/flex-layout/grid';
 
@@ -25,6 +28,8 @@ import { GridModule } from '@angular/flex-layout/grid';
     MatButtonModule,
     MatSnackBarModule,
     MatDialogModule,
+    MatExpansionModule,
+    MatSelectModule,
     FlexModule,
     FlexLayoutModule,
     GridModule
@@ -36,6 +41,8 @@ import { GridModule } from '@angular/flex-layout/grid';
     MatCardModule,
     MatButtonModule,
     MatDialogModule,
+    MatExpansionModule,
+    MatSelectModule,
     FlexModule,
     MatFormFieldModule,
     MatInputModule,

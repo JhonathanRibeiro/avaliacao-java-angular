@@ -1,1 +1,47 @@
-<p>update works!</p>
+<a routerLink="/">voltar</a>
+<br><br>
+<mat-accordion>
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <strong>Lançamento de notas e faltas</strong>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <form>
+            <mat-form-field>
+                <input matInput placeholder="Nome" [(ngModel)]="aluno.nome" name="nome">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Bimestre</mat-label>
+                <mat-select [(ngModel)]="selectedValue" name="bimestre">
+                    <mat-option *ngFor="let bimestre of bimestres" [value]="bimestre.value">
+                        {{bimestre.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Faltas</mat-label>
+                <input matInput #faltas maxlength="2" placeholder="Ex. 40" value="0">
+                <mat-hint align="end">{{faltas.value.length}} / 2</mat-hint>
+            </mat-form-field>
+
+            <div fxLayout="row" fxLayoutAlign="start center">
+                <mat-list role="list">
+                    <mat-list-item role="listitem" *ngFor="let atividade of atividades">
+                        {{atividade.descricao}}
+                        <span> Peso {{atividade.peso}}</span>
+                        <input type="number">
+                    </mat-list-item>
+                </mat-list>
+            </div>
+
+            <button class="criar" (click)="atualizar()" title="Salvar" mat-fab color="primary">
+                <i class="material-icons">done</i>
+            </button>
+        </form>
+
+    </mat-expansion-panel>
+</mat-accordion>
