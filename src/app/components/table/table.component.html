@@ -7,8 +7,7 @@
         <strong class="">Resultado da busca</strong>
     </ng-container>
 
-    <mat-paginator #paginator [length]="dataSource?.data?.length" [pageIndex]="0" [pageSize]="5"
-        [pageSizeOptions]="[5, 10, 20, 50, 100]" aria-label="Select page">
+    <mat-paginator #paginator [length]="dataSource?.data?.length" [pageIndex]="0" [pageSize]="5" [pageSizeOptions]="[5, 10, 20, 50, 100]" aria-label="Select page">
     </mat-paginator>
 
     <table mat-table class="full-width-table" matSort aria-label="Elements" [dataSource]="alunos">
@@ -51,7 +50,7 @@
             </th>
             <td mat-cell *matCellDef="let row">
                 <div class="actions">
-                    <a routerLink="" class="visibility ui-button" mat-fab>
+                    <a routerLink="/aluno/boletim/{{row.id}}" class="visibility ui-button" mat-fab>
                         <i class="material-icons">visibility</i>
                     </a>
                     <a routerLink="/aluno/update/{{row.id}}" class="edit ui-button" mat-fab>

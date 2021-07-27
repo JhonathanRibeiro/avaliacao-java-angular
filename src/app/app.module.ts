@@ -27,6 +27,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { DocumentacaoComponent } from './pages/documentacao/documentacao.component';
 import { VisualizaboletimComponent } from './components/visualizaboletim/visualizaboletim.component';
+import { BoletimComponent } from './components/boletim/boletim.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { VisualizaboletimComponent } from './components/visualizaboletim/visuali
     LoadingComponent,
     TableComponent,
     DocumentacaoComponent,
-    VisualizaboletimComponent
+    VisualizaboletimComponent,
+    BoletimComponent
   ],
   imports: [
     BrowserModule,

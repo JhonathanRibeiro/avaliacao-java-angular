@@ -9,34 +9,54 @@
         </mat-expansion-panel-header>
 
         <form>
-            <mat-form-field>
-                <input matInput placeholder="Nome" [(ngModel)]="aluno.nome" name="nome">
-            </mat-form-field>
+            <div fxLayout="row" class="grid-container">
+                <mat-form-field fxFlex="30" class="grid-item">
+                    <input matInput placeholder="Aluno" [(ngModel)]="boletim.aluno" name="aluno">
+                </mat-form-field>
 
-            <mat-form-field appearance="fill">
-                <mat-label>Bimestre</mat-label>
-                <mat-select [(ngModel)]="selectedValue" name="bimestre">
-                    <mat-option *ngFor="let bimestre of bimestres" [value]="bimestre.value">
-                        {{bimestre.viewValue}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
+                <mat-form-field appearance="fill" class="grid-item">
+                    <mat-label>Bimestre</mat-label>
+                    <mat-select [(ngModel)]="boletim.bimestre" name="bimestre">
+                        <mat-option *ngFor="let bimestre of bimestres" [value]="bimestre.value">
+                            {{bimestre.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
 
-            <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Faltas</mat-label>
-                <input matInput #faltas maxlength="2" placeholder="Ex. 40" value="0">
-                <mat-hint align="end">{{faltas.value.length}} / 2</mat-hint>
-            </mat-form-field>
-
-            <div fxLayout="row" fxLayoutAlign="start center">
-                <mat-list role="list">
-                    <mat-list-item role="listitem" *ngFor="let atividade of atividades">
-                        {{atividade.descricao}}
-                        <span> Peso {{atividade.peso}}</span>
-                        <input type="number">
-                    </mat-list-item>
-                </mat-list>
+                <mat-form-field class="example-full-width" appearance="fill" class="grid-item">
+                    <mat-label>Faltas</mat-label>
+                    <input [(ngModel)]="boletim.faltas" name="faltas" matInput #falta maxlength="2" placeholder="Ex. 40" value="0">
+                    <mat-hint align="end">{{falta.value.length}} / 2</mat-hint>
+                </mat-form-field>
             </div>
+
+            <table>
+                <tr>
+                    <th>Atividade</th>
+                    <th>Peso</th>
+                    <th>Nota</th>
+                </tr>
+                <tr>
+                    <td>Participação em sala de aula</td>
+                    <td>1.5</td>
+                    <td><input type="text" [(ngModel)]="nota1" name="nota1"></td>
+                </tr>
+                <tr>
+                    <td>Entrega das tarefas</td>
+                    <td>2.5</td>
+                    <td><input type="text" [(ngModel)]="nota2" name="nota2"></td>
+                </tr>
+                <tr>
+                    <td>Trabalho Bimestral</td>
+                    <td>3.0</td>
+                    <td><input type="text" [(ngModel)]="nota3" name="nota3"></td>
+                </tr>
+                <tr>
+                    <td>Prova Bimestral</td>
+                    <td>3.0</td>
+                    <td><input type="text" [(ngModel)]="nota4" name="nota4"></td>
+                </tr>
+            </table>
 
             <button class="criar" (click)="atualizar()" title="Salvar" mat-fab color="primary">
                 <i class="material-icons">done</i>

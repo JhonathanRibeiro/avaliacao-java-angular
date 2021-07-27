@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BoletimComponent } from './components/boletim/boletim.component';
 
 import { CreateComponent } from './pages/cadastro/create/create.component';
 import { UpdateComponent } from './pages/cadastro/update/update.component';
@@ -19,6 +20,9 @@ const routes: Routes = [
   },
   {
     path: 'documentacao', component: DocumentacaoComponent
+  },
+  {
+    path: 'aluno/boletim/:id', component: BoletimComponent
   }
 ];
 

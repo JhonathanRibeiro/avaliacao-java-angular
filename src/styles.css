@@ -20,3 +20,11 @@ body {
 .v-middle {
     vertical-align: middle;
 }
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}

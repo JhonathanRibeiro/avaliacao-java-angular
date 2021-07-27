@@ -4,3 +4,22 @@
     right: 16px;
     z-index: 10;
 }
+
+.grid-container {
+    display: grid;
+    grid-column-gap: 25px;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    text-align: left;
+    padding: 8px;
+}
