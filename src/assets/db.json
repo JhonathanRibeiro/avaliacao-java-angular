@@ -22,29 +22,42 @@
     ],
     "boletim": [{
             "id": 1,
-            "aluno": "Jhonathan Ribeiro",
-            "notas": [
-                1.2,
-                2.3,
-                3.0,
-                1.4
-            ],
-            "faltas": 89,
+            "aluno": "Jhonathan Ribeirovsky",
+            "matricula": 12072021,
+            "status": "ativo",
+            "n1": "22",
+            "n2": "3",
+            "n3": "4",
+            "n4": "5",
+            "faltas": "8",
             "situacao": "",
-            "bimestre": ""
+            "bimestre": 2
         },
         {
-            "id": 1,
-            "aluno": "Maria de Lurdes",
-            "notas": [
-                1.2,
-                2.3,
-                3.0,
-                1.4
-            ],
-            "faltas": 89,
+            "id": 2,
+            "aluno": "Isabella V. Siqueira",
+            "matricula": 22072021,
+            "status": "ativo",
+            "n1": "10",
+            "n2": "10",
+            "n3": "10",
+            "n4": "10",
+            "faltas": "12",
             "situacao": "",
-            "bimestre": ""
+            "bimestre": 3
+        },
+        {
+            "id": 3,
+            "aluno": "Maria de Lurdes",
+            "matricula": 22072021,
+            "status": "ativo",
+            "n1": 1,
+            "n2": 2,
+            "n3": 3,
+            "n4": 4,
+            "faltas": 19,
+            "situacao": "",
+            "bimestre": 4
         }
     ],
     "avaliacoes": [{
@@ -60,12 +73,129 @@
         {
             "id": 3,
             "descricao": "Trabalho bimestral ",
-            "peso": 3.0
+            "peso": 3
         },
         {
             "id": 4,
             "descricao": "Prova bimestral",
-            "peso": 3.0
+            "peso": 3
         }
-    ]
+    ],
+    "bimestres": [{
+            "id": 1,
+            "bimestre_id": 1,
+            "aluno_id": 1,
+            "n1": 1,
+            "n2": 2,
+            "n3": 3,
+            "n4": 4,
+            "faltas": 19
+        },
+        {
+            "id": 2,
+            "bimestre_id": 2,
+            "aluno_id": 2,
+            "n1": 1,
+            "n2": 2,
+            "n3": 3,
+            "n4": 4,
+            "faltas": 19
+        },
+        {
+            "id": 3,
+            "bimestre_id": 3,
+            "aluno_id": 1,
+            "n1": 1,
+            "n2": 2,
+            "n3": 3,
+            "n4": 4,
+            "faltas": 19
+        },
+        {
+            "id": 4,
+            "bimestre_id": 4,
+            "aluno_id": 2,
+            "n1": 1,
+            "n2": 2,
+            "n3": 3,
+            "n4": 4,
+            "faltas": 19
+        }
+    ],
+    "teste": [{
+        "teste": [{
+                "id": 1,
+                "aluno": "Jhonathan Ribeirovsky",
+                "matricula": 12072021,
+                "status": "ativo",
+                "n1": "22",
+                "n2": "3",
+                "n3": "4",
+                "n4": "5",
+                "faltas": "8",
+                "situacao": "",
+                "bimestre": 2
+            },
+            {
+                "id": 2,
+                "aluno": "Isabella V. Siqueira",
+                "matricula": 22072021,
+                "status": "ativo",
+                "n1": "10",
+                "n2": "10",
+                "n3": "10",
+                "n4": "10",
+                "faltas": "12",
+                "situacao": "",
+                "bimestre": 3
+            },
+            {
+                "id": 3,
+                "aluno": "Maria de Lurdes",
+                "matricula": 22072021,
+                "status": "ativo",
+                "n1": 1,
+                "n2": 2,
+                "n3": 3,
+                "n4": 4,
+                "faltas": 19,
+                "situacao": "",
+                "bimestre": 4
+            }
+        ],
+        "alunos_teste": [{
+                "id": 1,
+                "aluno": "Jhonathan Ribeirovsky",
+                "matricula": 12072021,
+                "status": "ativo",
+                "situacao": ""
+            },
+            {
+                "id": 2,
+                "aluno": "Isabella V. Siqueira",
+                "matricula": 12072021,
+                "status": "ativo",
+                "situacao": ""
+            }
+        ],
+        "bimestres_teste": [{
+                "id": 1,
+                "aluno_id": 1,
+                "n1": 1,
+                "n2": 2,
+                "n3": 3,
+                "n4": 4,
+                "faltas": 19
+            },
+            {
+                "id": 2,
+                "aluno_id": 1,
+                "n1": 1,
+                "n2": 2,
+                "n3": 3,
+                "n4": 4,
+                "faltas": 19
+            }
+        ]
+    }]
 }

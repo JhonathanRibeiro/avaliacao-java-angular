@@ -1,5 +1,5 @@
 export interface Bimestres {
-    value: string;
+    value: number;
     viewValue: string;
   }
   
