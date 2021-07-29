@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Boletim } from 'src/app/models/boletim.model';
+import { Aluno } from 'src/app/models/aluno.model';
 import { PesquisaService } from 'src/app/services/pesquisa.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { PesquisaService } from 'src/app/services/pesquisa.service';
 })
 export class BoletimComponent implements OnInit {
   panelOpenState = true;
-  boletim: Boletim;
+  aluno: Aluno;
 
   constructor(
     private pesquisa: PesquisaService,
@@ -19,14 +19,8 @@ export class BoletimComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    this.pesquisa.getBoletim(id).subscribe(boletim =>{
-      this.boletim = boletim;
-      console.log(boletim)
+    this.pesquisa.getAlunoById(id).subscribe(alunos =>{
+      this.aluno = alunos;
     });
-
-    this.pesquisa.getBoletins(id).subscribe(boletins=>{
-      console.log('boletins', boletins);
-    })
   }
-
 }

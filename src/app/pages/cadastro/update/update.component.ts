@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Aluno } from 'src/app/models/aluno.model';
 import { Atividades } from 'src/app/models/atividade.model';
 import { Bimestres } from 'src/app/models/bimestres.model';
-import { Boletim } from 'src/app/models/boletim.model';
 import { CadastrosService } from 'src/app/services/cadastros.service';
 import { MessageService } from 'src/app/services/message.service';
 import { PesquisaService } from 'src/app/services/pesquisa.service';
@@ -14,8 +14,7 @@ import { PesquisaService } from 'src/app/services/pesquisa.service';
 })
 export class UpdateComponent implements OnInit {
   panelOpenState = false;
-  boletim: Boletim;
-  bim: any;
+  boletim: Aluno;
 
   bimestres: Bimestres[] = [
     { value: 1, viewValue: '1º Bimestre' },
@@ -41,19 +40,15 @@ export class UpdateComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    this.pesquisa.getBoletim(id).subscribe(alunos => {
+    this.pesquisa.getAlunoById(id).subscribe(alunos => {
      this.boletim = alunos
-    });
-
-    this.pesquisa.getDadosPorBimestre(id, 1).subscribe(data=>{
-      console.log('Dados',data)
     });
   }
 
   atualizar(): void {
-    this.service.postBoletim(this.boletim).subscribe(() => {
+    this.service.updateAluno(this.boletim).subscribe(() => {
       this.msg.showMessage(`Registro do aluno ${this.boletim.aluno} atualizado com sucesso!`);
       this.router.navigate(['/']);
-    })
+    });
   }
 }

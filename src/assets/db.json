@@ -1,27 +1,6 @@
 {
     "alunos": [{
             "id": 1,
-            "nome": "Pedro Nogueira"
-        },
-        {
-            "id": 2,
-            "nome": "Maria Tavares"
-        },
-        {
-            "id": 3,
-            "nome": "João da Silva"
-        },
-        {
-            "id": 4,
-            "nome": "José Queiroz"
-        },
-        {
-            "id": 5,
-            "nome": "Isabella V Siqueira"
-        }
-    ],
-    "boletim": [{
-            "id": 1,
             "aluno": "Jhonathan Ribeirovsky",
             "matricula": 12072021,
             "status": "ativo",
@@ -29,9 +8,41 @@
             "n2": "3",
             "n3": "4",
             "n4": "5",
-            "faltas": "8",
+            "faltas": "53",
             "situacao": "",
-            "bimestre": 2
+            "bimestre": [{
+                    "id": 1,
+                    "n1": 1,
+                    "n2": 2,
+                    "n3": 3,
+                    "n4": 4,
+                    "faltas": 19
+                },
+                {
+                    "id": 2,
+                    "n1": 1,
+                    "n2": 2,
+                    "n3": 3,
+                    "n4": 4,
+                    "faltas": 19
+                },
+                {
+                    "id": 3,
+                    "n1": 1,
+                    "n2": 2,
+                    "n3": 3,
+                    "n4": 4,
+                    "faltas": 19
+                },
+                {
+                    "id": 4,
+                    "n1": 1,
+                    "n2": 2,
+                    "n3": 3,
+                    "n4": 4,
+                    "faltas": 19
+                }
+            ]
         },
         {
             "id": 2,
@@ -44,158 +55,79 @@
             "n4": "10",
             "faltas": "12",
             "situacao": "",
-            "bimestre": 3
+            "bimestre": [{
+                    "id": 1,
+                    "n1": 1,
+                    "n2": 2,
+                    "n3": 3,
+                    "n4": 4,
+                    "faltas": 19
+                },
+                {
+                    "id": 2,
+                    "n1": 1,
+                    "n2": 2,
+                    "n3": 3,
+                    "n4": 4,
+                    "faltas": 19
+                },
+                {
+                    "id": 3,
+                    "n1": 1,
+                    "n2": 2,
+                    "n3": 3,
+                    "n4": 4,
+                    "faltas": 19
+                },
+                {
+                    "id": 4,
+                    "n1": 1,
+                    "n2": 2,
+                    "n3": 3,
+                    "n4": 4,
+                    "faltas": 19
+                }
+            ]
         },
         {
             "id": 3,
             "aluno": "Maria de Lurdes",
             "matricula": 22072021,
             "status": "ativo",
-            "n1": 1,
-            "n2": 2,
-            "n3": 3,
-            "n4": 4,
-            "faltas": 19,
             "situacao": "",
-            "bimestre": 4
+            "bimestre": [{
+                    "id": 1,
+                    "n1": 1,
+                    "n2": 2,
+                    "n3": 3,
+                    "n4": 4,
+                    "faltas": 19
+                },
+                {
+                    "id": 2,
+                    "n1": 1,
+                    "n2": 2,
+                    "n3": 3,
+                    "n4": 4,
+                    "faltas": 19
+                },
+                {
+                    "id": 3,
+                    "n1": 1,
+                    "n2": 2,
+                    "n3": 3,
+                    "n4": 4,
+                    "faltas": 19
+                },
+                {
+                    "id": 4,
+                    "n1": 1,
+                    "n2": 2,
+                    "n3": 3,
+                    "n4": 4,
+                    "faltas": 19
+                }
+            ]
         }
-    ],
-    "avaliacoes": [{
-            "id": 1,
-            "descricao": "Participação em sala de aula",
-            "peso": 1.5
-        },
-        {
-            "id": 2,
-            "descricao": "Entrega das tarefas ",
-            "peso": 2.5
-        },
-        {
-            "id": 3,
-            "descricao": "Trabalho bimestral ",
-            "peso": 3
-        },
-        {
-            "id": 4,
-            "descricao": "Prova bimestral",
-            "peso": 3
-        }
-    ],
-    "bimestres": [{
-            "id": 1,
-            "bimestre_id": 1,
-            "aluno_id": 1,
-            "n1": 1,
-            "n2": 2,
-            "n3": 3,
-            "n4": 4,
-            "faltas": 19
-        },
-        {
-            "id": 2,
-            "bimestre_id": 2,
-            "aluno_id": 2,
-            "n1": 1,
-            "n2": 2,
-            "n3": 3,
-            "n4": 4,
-            "faltas": 19
-        },
-        {
-            "id": 3,
-            "bimestre_id": 3,
-            "aluno_id": 1,
-            "n1": 1,
-            "n2": 2,
-            "n3": 3,
-            "n4": 4,
-            "faltas": 19
-        },
-        {
-            "id": 4,
-            "bimestre_id": 4,
-            "aluno_id": 2,
-            "n1": 1,
-            "n2": 2,
-            "n3": 3,
-            "n4": 4,
-            "faltas": 19
-        }
-    ],
-    "teste": [{
-        "teste": [{
-                "id": 1,
-                "aluno": "Jhonathan Ribeirovsky",
-                "matricula": 12072021,
-                "status": "ativo",
-                "n1": "22",
-                "n2": "3",
-                "n3": "4",
-                "n4": "5",
-                "faltas": "8",
-                "situacao": "",
-                "bimestre": 2
-            },
-            {
-                "id": 2,
-                "aluno": "Isabella V. Siqueira",
-                "matricula": 22072021,
-                "status": "ativo",
-                "n1": "10",
-                "n2": "10",
-                "n3": "10",
-                "n4": "10",
-                "faltas": "12",
-                "situacao": "",
-                "bimestre": 3
-            },
-            {
-                "id": 3,
-                "aluno": "Maria de Lurdes",
-                "matricula": 22072021,
-                "status": "ativo",
-                "n1": 1,
-                "n2": 2,
-                "n3": 3,
-                "n4": 4,
-                "faltas": 19,
-                "situacao": "",
-                "bimestre": 4
-            }
-        ],
-        "alunos_teste": [{
-                "id": 1,
-                "aluno": "Jhonathan Ribeirovsky",
-                "matricula": 12072021,
-                "status": "ativo",
-                "situacao": ""
-            },
-            {
-                "id": 2,
-                "aluno": "Isabella V. Siqueira",
-                "matricula": 12072021,
-                "status": "ativo",
-                "situacao": ""
-            }
-        ],
-        "bimestres_teste": [{
-                "id": 1,
-                "aluno_id": 1,
-                "n1": 1,
-                "n2": 2,
-                "n3": 3,
-                "n4": 4,
-                "faltas": 19
-            },
-            {
-                "id": 2,
-                "aluno_id": 1,
-                "n1": 1,
-                "n2": 2,
-                "n3": 3,
-                "n4": 4,
-                "faltas": 19
-            }
-        ]
-    }]
+    ]
 }

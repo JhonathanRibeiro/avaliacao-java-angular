@@ -10,11 +10,6 @@ import { Aluno } from 'src/app/models/aluno.model';
 const EXAMPLE_DATA: Aluno[] = [
 ];
 
-/**
- * Data source for the Table view. This class should
- * encapsulate all logic for fetching and manipulating the displayed data
- * (including sorting, pagination, and filtering).
- */
 export class TableDataSource extends DataSource<Aluno> {
   data: Aluno[] = EXAMPLE_DATA;
   paginator: MatPaginator | undefined;
@@ -42,10 +37,6 @@ export class TableDataSource extends DataSource<Aluno> {
     }
   }
 
-  /**
-   *  Called when the table is being destroyed. Use this function, to clean up
-   * any open connections or free any held resources that were set up during connect.
-   */
   disconnect(): void {}
 
   /**
@@ -73,7 +64,7 @@ export class TableDataSource extends DataSource<Aluno> {
     return data.sort((a, b) => {
       const isAsc = this.sort?.direction === 'asc';
       switch (this.sort?.active) {
-        case 'name': return compare(a.nome, b.nome, isAsc);
+        // case 'name': return compare(a.nome, b.nome, isAsc);
         // case 'id': return compare(+a.id, +b.id, isAsc);
         default: return 0;
       }

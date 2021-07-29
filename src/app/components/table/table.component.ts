@@ -5,7 +5,6 @@ import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
 import { TableDataSource } from './table-datasource';
 import { PesquisaService } from 'src/app/services/pesquisa.service';
-import { Boletim } from 'src/app/models/boletim.model';
 
 @Component({
   selector: 'app-table',
@@ -17,7 +16,7 @@ export class TableComponent implements AfterViewInit, OnInit {
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatTable) table!: MatTable<Aluno>;
 
-  alunos: Boletim[] = [];
+  alunos: Aluno[] = [];
   dataSource: TableDataSource;
   displayedColumns = ['id', 'nome', 'matricula','status','acoes'];
 

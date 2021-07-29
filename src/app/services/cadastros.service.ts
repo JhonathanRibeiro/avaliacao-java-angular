@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Aluno } from '../models/aluno.model';
-import { Boletim } from '../models/boletim.model';
 
 @Injectable({
   providedIn: 'root'
@@ -19,11 +18,6 @@ export class CadastrosService {
   public updateAluno(aluno: Aluno): Observable<Aluno> {
     const url = `${environment.api}/alunos/${aluno.id}`;
     return this.http.put<Aluno>(url, aluno);
-  }
-
-  public postBoletim(boletim: Boletim): Observable<Boletim> {
-    const url = `${environment.api}/boletim/${boletim.id}`;
-    return this.http.put<Boletim>(url, boletim);
   }
 
 }
