@@ -1,6 +1,6 @@
 export interface Aluno {
     id?: number;
-    aluno: String;
+    nome: String;
     n1?: number;
     n2?: number;
     n3?: number;

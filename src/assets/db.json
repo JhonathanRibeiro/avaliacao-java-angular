@@ -1,7 +1,7 @@
 {
     "alunos": [{
             "id": 1,
-            "aluno": "Jhonathan Ribeirovsky",
+            "nome": "Jhonathan Ribeirovsky",
             "matricula": 12072021,
             "status": "ativo",
             "n1": "22",
@@ -10,7 +10,7 @@
             "n4": "5",
             "faltas": "53",
             "situacao": "",
-            "bimestre": [{
+            "bimestresF": [{
                     "id": 1,
                     "n1": 1,
                     "n2": 2,
@@ -46,7 +46,7 @@
         },
         {
             "id": 2,
-            "aluno": "Isabella V. Siqueira",
+            "nome": "Isabella V. Siqueira",
             "matricula": 22072021,
             "status": "ativo",
             "n1": "10",
@@ -55,7 +55,7 @@
             "n4": "10",
             "faltas": "12",
             "situacao": "",
-            "bimestre": [{
+            "bimestresF": [{
                     "id": 1,
                     "n1": 1,
                     "n2": 2,
@@ -91,11 +91,11 @@
         },
         {
             "id": 3,
-            "aluno": "Maria de Lurdes",
+            "nome": "Maria de Lurdes",
             "matricula": 22072021,
             "status": "ativo",
             "situacao": "",
-            "bimestre": [{
+            "bimestresF": [{
                     "id": 1,
                     "n1": 1,
                     "n2": 2,

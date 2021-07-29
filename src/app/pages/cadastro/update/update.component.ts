@@ -12,9 +12,10 @@ import { PesquisaService } from 'src/app/services/pesquisa.service';
   templateUrl: './update.component.html',
   styleUrls: ['./update.component.css']
 })
+
 export class UpdateComponent implements OnInit {
   panelOpenState = false;
-  boletim: Aluno;
+  aluno: Aluno;
 
   bimestres: Bimestres[] = [
     { value: 1, viewValue: '1º Bimestre' },
@@ -39,16 +40,21 @@ export class UpdateComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.pesquisa.getAlunoById(id).subscribe(alunos => {
-     this.boletim = alunos
-    });
+    this.listaALunos();
   }
 
   atualizar(): void {
-    this.service.updateAluno(this.boletim).subscribe(() => {
-      this.msg.showMessage(`Registro do aluno ${this.boletim.aluno} atualizado com sucesso!`);
+    this.service.updateAluno(this.aluno).subscribe(() => {
+      this.msg.showMessage(`Registro do aluno ${this.aluno.nome} atualizado com sucesso!`);
       this.router.navigate(['/']);
     });
   }
+
+  listaALunos() {
+    const id = this.route.snapshot.paramMap.get('id');
+    this.pesquisa.getAlunoById(id).subscribe(alunos => {
+     this.aluno = alunos
+    });
+  }
+
 }

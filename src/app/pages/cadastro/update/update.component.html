@@ -11,12 +11,12 @@
         <form>
             <div fxLayout="row" class="grid-container">
                 <mat-form-field fxFlex="30" class="grid-item">
-                    <input matInput placeholder="Aluno" [(ngModel)]="boletim.aluno" name="aluno">
+                    <input matInput placeholder="Aluno" [(ngModel)]="aluno.nome" name="aluno">
                 </mat-form-field>
 
                 <mat-form-field appearance="fill" class="grid-item">
                     <mat-label>Bimestre</mat-label>
-                    <mat-select [(ngModel)]="boletim.bimestre" name="bimestre">
+                    <mat-select [(ngModel)]="aluno.bimestre" name="bimestre">
                         <mat-option *ngFor="let bimestre of bimestres" [value]="bimestre.value">
                             {{bimestre.viewValue}}
                         </mat-option>
@@ -25,7 +25,7 @@
 
                 <mat-form-field class="example-full-width" appearance="fill" class="grid-item">
                     <mat-label>Faltas</mat-label>
-                    <input [(ngModel)]="boletim.faltas" name="faltas" matInput #falta maxlength="2" placeholder="Ex. 40" value="0">
+                    <input [(ngModel)]="aluno.faltas" name="faltas" matInput #falta maxlength="2" placeholder="Ex. 40" value="0">
                     <mat-hint align="end">{{falta.value.length}} / 2</mat-hint>
                 </mat-form-field>
             </div>
@@ -39,22 +39,22 @@
                 <tr>
                     <td>Participação em sala de aula</td>
                     <td>1.5</td>
-                    <td><input type="text" [(ngModel)]="boletim.n1" name="n1"></td>
+                    <td><input type="text" [(ngModel)]="aluno.n1" name="n1"></td>
                 </tr>
                 <tr>
                     <td>Entrega das tarefas</td>
                     <td>2.5</td>
-                    <td><input type="text" [(ngModel)]="boletim.n2" name="n2"></td>
+                    <td><input type="text" [(ngModel)]="aluno.n2" name="n2"></td>
                 </tr>
                 <tr>
                     <td>Trabalho Bimestral</td>
                     <td>3.0</td>
-                    <td><input type="text" [(ngModel)]="boletim.n3" name="n3"></td>
+                    <td><input type="text" [(ngModel)]="aluno.n3" name="n3"></td>
                 </tr>
                 <tr>
                     <td>Prova Bimestral</td>
                     <td>3.0</td>
-                    <td><input type="text" [(ngModel)]="boletim.n4" name="n4"></td>
+                    <td><input type="text" [(ngModel)]="aluno.n4" name="n4"></td>
                 </tr>
             </table>
 
