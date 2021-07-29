@@ -1,133 +1,138 @@
 {
-    "alunos": [{
-            "id": 1,
-            "nome": "Jhonathan Ribeirovsky",
-            "matricula": 12072021,
-            "status": "ativo",
-            "n1": "22",
-            "n2": "3",
-            "n3": "4",
-            "n4": "5",
-            "faltas": "53",
-            "situacao": "",
-            "bimestresF": [{
-                    "id": 1,
-                    "n1": 1,
-                    "n2": 2,
-                    "n3": 3,
-                    "n4": 4,
-                    "faltas": 19
-                },
-                {
-                    "id": 2,
-                    "n1": 1,
-                    "n2": 2,
-                    "n3": 3,
-                    "n4": 4,
-                    "faltas": 19
-                },
-                {
-                    "id": 3,
-                    "n1": 1,
-                    "n2": 2,
-                    "n3": 3,
-                    "n4": 4,
-                    "faltas": 19
-                },
-                {
-                    "id": 4,
-                    "n1": 1,
-                    "n2": 2,
-                    "n3": 3,
-                    "n4": 4,
-                    "faltas": 19
-                }
-            ]
+  "alunos": [
+    {
+      "id": 1,
+      "nome": "Jhonathan Ribeirovsky",
+      "matricula": 12072021,
+      "status": "ativo",
+      "n1": "22",
+      "n2": "3",
+      "n3": "4",
+      "n4": "5",
+      "faltas": "53",
+      "situacao": "",
+      "bimestres": [
+        {
+          "id": 1,
+          "n1": 1,
+          "n2": 2,
+          "n3": 3,
+          "n4": 4,
+          "faltas": 19
         },
         {
-            "id": 2,
-            "nome": "Isabella V. Siqueira",
-            "matricula": 22072021,
-            "status": "ativo",
-            "n1": "10",
-            "n2": "10",
-            "n3": "10",
-            "n4": "10",
-            "faltas": "12",
-            "situacao": "",
-            "bimestresF": [{
-                    "id": 1,
-                    "n1": 1,
-                    "n2": 2,
-                    "n3": 3,
-                    "n4": 4,
-                    "faltas": 19
-                },
-                {
-                    "id": 2,
-                    "n1": 1,
-                    "n2": 2,
-                    "n3": 3,
-                    "n4": 4,
-                    "faltas": 19
-                },
-                {
-                    "id": 3,
-                    "n1": 1,
-                    "n2": 2,
-                    "n3": 3,
-                    "n4": 4,
-                    "faltas": 19
-                },
-                {
-                    "id": 4,
-                    "n1": 1,
-                    "n2": 2,
-                    "n3": 3,
-                    "n4": 4,
-                    "faltas": 19
-                }
-            ]
+          "id": 2,
+          "n1": 1,
+          "n2": 2,
+          "n3": 3,
+          "n4": 4,
+          "faltas": 19
         },
         {
-            "id": 3,
-            "nome": "Maria de Lurdes",
-            "matricula": 22072021,
-            "status": "ativo",
-            "situacao": "",
-            "bimestresF": [{
-                    "id": 1,
-                    "n1": 1,
-                    "n2": 2,
-                    "n3": 3,
-                    "n4": 4,
-                    "faltas": 19
-                },
-                {
-                    "id": 2,
-                    "n1": 1,
-                    "n2": 2,
-                    "n3": 3,
-                    "n4": 4,
-                    "faltas": 19
-                },
-                {
-                    "id": 3,
-                    "n1": 1,
-                    "n2": 2,
-                    "n3": 3,
-                    "n4": 4,
-                    "faltas": 19
-                },
-                {
-                    "id": 4,
-                    "n1": 1,
-                    "n2": 2,
-                    "n3": 3,
-                    "n4": 4,
-                    "faltas": 19
-                }
-            ]
+          "id": 3,
+          "n1": 1,
+          "n2": 2,
+          "n3": 3,
+          "n4": 4,
+          "faltas": 19
+        },
+        {
+          "id": 4,
+          "n1": 1,
+          "n2": 2,
+          "n3": 3,
+          "n4": 4,
+          "faltas": 19
         }
-    ]
+      ],
+      "bimestre": 4
+    },
+    {
+      "id": 2,
+      "nome": "Isabella V. Siqueira",
+      "matricula": 22072021,
+      "status": "ativo",
+      "n1": "10",
+      "n2": "10",
+      "n3": "10",
+      "n4": "10",
+      "faltas": "12",
+      "situacao": "",
+      "bimestres": [
+        {
+          "id": 1,
+          "n1": 1,
+          "n2": 2,
+          "n3": 3,
+          "n4": 4,
+          "faltas": 19
+        },
+        {
+          "id": 2,
+          "n1": 1,
+          "n2": 2,
+          "n3": 3,
+          "n4": 4,
+          "faltas": 19
+        },
+        {
+          "id": 3,
+          "n1": 1,
+          "n2": 2,
+          "n3": 3,
+          "n4": 4,
+          "faltas": 19
+        },
+        {
+          "id": 4,
+          "n1": 1,
+          "n2": 2,
+          "n3": 3,
+          "n4": 4,
+          "faltas": 19
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "nome": "Maria de Lurdes",
+      "matricula": 22072021,
+      "status": "ativo",
+      "situacao": "",
+      "bimestres": [
+        {
+          "id": 1,
+          "n1": 1,
+          "n2": 2,
+          "n3": 3,
+          "n4": 4,
+          "faltas": 19
+        },
+        {
+          "id": 2,
+          "n1": 1,
+          "n2": 2,
+          "n3": 3,
+          "n4": 4,
+          "faltas": 19
+        },
+        {
+          "id": 3,
+          "n1": 1,
+          "n2": 2,
+          "n3": 3,
+          "n4": 4,
+          "faltas": 19
+        },
+        {
+          "id": 4,
+          "n1": 1,
+          "n2": 2,
+          "n3": 3,
+          "n4": 4,
+          "faltas": 19
+        }
+      ]
+    }
+  ]
 }

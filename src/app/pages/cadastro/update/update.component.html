@@ -16,7 +16,7 @@
 
                 <mat-form-field appearance="fill" class="grid-item">
                     <mat-label>Bimestre</mat-label>
-                    <mat-select [(ngModel)]="aluno.bimestre" name="bimestre">
+                    <mat-select [(ngModel)]="aluno.bimestre" name="bimestre" type="number">
                         <mat-option *ngFor="let bimestre of bimestres" [value]="bimestre.value">
                             {{bimestre.viewValue}}
                         </mat-option>
@@ -57,6 +57,7 @@
                     <td><input type="text" [(ngModel)]="aluno.n4" name="n4"></td>
                 </tr>
             </table>
+
 
             <button class="criar" (click)="atualizar()" title="Salvar" mat-fab color="primary">
                 <i class="material-icons">done</i>

@@ -11,12 +11,12 @@
             </th>
             <td mat-cell *matCellDef="let row">{{row.id}}</td>
         </ng-container>
-        <!-- Aluno Column -->
+        <!-- Nome Aluno Column -->
         <ng-container matColumnDef="nome">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>
                 <strong>Aluno</strong>
             </th>
-            <td mat-cell *matCellDef="let row">{{row.aluno}}</td>
+            <td mat-cell *matCellDef="let row">{{row.nome}}</td>
         </ng-container>
         <!-- Media Final Column -->
         <ng-container matColumnDef="matricula">

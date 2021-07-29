@@ -16,6 +16,7 @@ import { PesquisaService } from 'src/app/services/pesquisa.service';
 export class UpdateComponent implements OnInit {
   panelOpenState = false;
   aluno: Aluno;
+  bimestre: [];
 
   bimestres: Bimestres[] = [
     { value: 1, viewValue: '1º Bimestre' },
@@ -40,21 +41,29 @@ export class UpdateComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.listaALunos();
+    this.listaALuno();
   }
 
   atualizar(): void {
     this.service.updateAluno(this.aluno).subscribe(() => {
+     
+      localStorage.setItem("item", JSON.stringify(this.aluno))
       this.msg.showMessage(`Registro do aluno ${this.aluno.nome} atualizado com sucesso!`);
-      this.router.navigate(['/']);
+      // this.router.navigate(['/']);
     });
   }
 
-  listaALunos() {
+  listaALuno() {
     const id = this.route.snapshot.paramMap.get('id');
     this.pesquisa.getAlunoById(id).subscribe(alunos => {
-     this.aluno = alunos
+      this.aluno = alunos
+
+      this.aluno.bimestres.filter((bim: any)=>{
+        this.bimestre = bim;
+      
+        console.log(this.bimestre)
+      })
+
     });
   }
-
 }

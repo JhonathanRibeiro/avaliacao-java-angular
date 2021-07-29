@@ -19,5 +19,4 @@ export class CadastrosService {
     const url = `${environment.api}/alunos/${aluno.id}`;
     return this.http.put<Aluno>(url, aluno);
   }
-
 }

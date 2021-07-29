@@ -1,4 +1,5 @@
 export interface Aluno {
+    [x: string]: any;
     id?: number;
     nome: String;
     n1?: number;
