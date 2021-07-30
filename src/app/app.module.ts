@@ -28,7 +28,6 @@ import { MatSortModule } from '@angular/material/sort';
 import { DocumentacaoComponent } from './pages/documentacao/documentacao.component';
 import { VisualizaboletimComponent } from './components/visualizaboletim/visualizaboletim.component';
 import { BoletimComponent } from './components/boletim/boletim.component';
-import { FrequenciaComponent } from './components/frequencia/frequencia.component';
 
 @NgModule({
   declarations: [
@@ -43,8 +42,7 @@ import { FrequenciaComponent } from './components/frequencia/frequencia.componen
     TableComponent,
     DocumentacaoComponent,
     VisualizaboletimComponent,
-    BoletimComponent,
-    FrequenciaComponent
+    BoletimComponent
   ],
   imports: [
     BrowserModule,

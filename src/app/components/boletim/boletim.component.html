@@ -92,11 +92,47 @@
                 <th>Resultado final</th>
             </tr>
             <tr>
-                <th>Aprovado</th>
+                <th>
+                    <input type="button" [(ngModel)]="situacao">
+                </th>
             </tr>
         </tbody>
 
     </mat-expansion-panel>
 </mat-accordion>
 <br>
-<app-frequencia></app-frequencia>
+<br>
+<mat-accordion>
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <strong>Frequência escolar</strong>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <table class="text-center">
+            <thead>
+                <tr class="bg-blue">
+                    <th>Nome</th>
+                    <th>Dias</th>
+                    <th>Faltas</th>
+                    <th>Freq%</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>
+                        <input type="button" [(ngModel)]="aluno.nome">
+                    </th>
+                    <td>160</td>
+                    <td>
+                        <input type="button" [(ngModel)]="totalfaltas">
+                    </td>
+                    <td>
+                        <input type="button" [(ngModel)]="presenca">%
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </mat-expansion-panel>
+</mat-accordion>

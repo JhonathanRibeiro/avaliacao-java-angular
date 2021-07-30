@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Aluno } from 'src/app/models/aluno.model';
-import { PesquisaService } from 'src/app/services/pesquisa.service';
+import { Aluno } from '../models/aluno.model';
+import { PesquisaService } from './pesquisa.service';
 
-@Component({
-  selector: 'app-boletim',
-  templateUrl: './boletim.component.html',
-  styleUrls: ['./boletim.component.css']
+@Injectable({
+  providedIn: 'root'
 })
-export class BoletimComponent implements OnInit {
-  panelOpenState = false;
+export class BoletimService {
   aluno: Aluno;
 
   primeirobimestre: Aluno[];
@@ -24,18 +21,11 @@ export class BoletimComponent implements OnInit {
   mediasporbimestre: Array<any>;
 
   mediafinal: any;
-  totalfaltas: number = 0;
-  presenca: number = 0;
-  situacao: string = '';
 
   constructor(
     private pesquisa: PesquisaService,
-    private route: ActivatedRoute,
+    private route: ActivatedRoute
   ) { }
-
-  ngOnInit(): void {
-    this.boletimEscolar();
-  }
 
   boletimEscolar(): void {
     const id = this.route.snapshot.paramMap.get('id');
@@ -43,10 +33,6 @@ export class BoletimComponent implements OnInit {
       this.aluno = alunos
 
       this.aluno.bimestres.filter((res: any) => {
-        this.totalfaltas = this.totalfaltas + parseInt(res.faltas)
-        console.log(this.totalfaltas);
-
-        this.presenca = parseInt(this.calculoFrequencia(this.totalfaltas).toFixed(2))
         const result = Array(res);
 
         const gradList = [
@@ -88,13 +74,6 @@ export class BoletimComponent implements OnInit {
 
         this.mediafinal = this.getMediaFinal(this.mediasporbimestre)
 
-
-        if ((this.presenca < 75 && media < 5)? res.situacao = 'Reprovado':'')
-        if ((media >= 5 && media < 6)?res.situacao = 'Recuperação':'Aprovado')
-
-        // if (this.presenca < 75 && media < 5) console.log( res.situacao = 'Reprovado');
-        // if (media >= 5 && media < 6) console.log( res.situacao = 'Recuperação');
-        console.log( res.situacao = 'Aprovado');
       })
     });
   }
@@ -118,13 +97,8 @@ export class BoletimComponent implements OnInit {
     return sum
   }
 
-  public calculoFrequencia(freq: any) {
-    let faltas = freq;
-    let dias = 160;
 
-    let result = dias - faltas;
-    let n = result / dias;
-    let a = n * 100;
-    return a;
-  }
+
+
+
 }
