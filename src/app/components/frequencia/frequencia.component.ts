@@ -11,7 +11,8 @@ import { PesquisaService } from 'src/app/services/pesquisa.service';
 export class FrequenciaComponent implements OnInit {
   panelOpenState = false;
   aluno: Aluno;
-  totalfaltas: Array<number> = [];
+  totalfaltas: number = 0;
+  presenca: number = 0;
 
   constructor(
     private service: PesquisaService,
@@ -21,23 +22,15 @@ export class FrequenciaComponent implements OnInit {
     this.getFrequencia();
   }
 
-  public calculoFrequencia(freq: any) {
-    let faltas = freq;
-    let dias = 160;
-
-    let result = dias - faltas;
-    let n = result / dias;
-    let a = n * 100;
-    return a;
-  }
-
   public getFrequencia(): void {
     const id = this.route.snapshot.paramMap.get('id');
     this.service.getAlunoById(id).subscribe((el: Aluno[]) => {
       this.aluno = el
-
       this.aluno.bimestres.filter((res: any) => {
-        const presenca = parseInt(this.calculoFrequencia(res.faltas).toFixed(2))
+         this.totalfaltas = this.totalfaltas + parseInt(res.faltas)
+         console.log(this.totalfaltas);
+
+        this.presenca = parseInt(this.calculoFrequencia(this.totalfaltas).toFixed(2))
       });
 
       // console.log(this.somaFaltas([1,2,3,4]))
@@ -54,5 +47,15 @@ export class FrequenciaComponent implements OnInit {
       sum += gradeList[i]
     }
     return sum
+  }
+
+  public calculoFrequencia(freq: any) {
+    let faltas = freq;
+    let dias = 160;
+
+    let result = dias - faltas;
+    let n = result / dias;
+    let a = n * 100;
+    return a;
   }
 }
