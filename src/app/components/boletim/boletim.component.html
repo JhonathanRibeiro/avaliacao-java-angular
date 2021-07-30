@@ -9,8 +9,25 @@
         </mat-expansion-panel-header>
 
         <table>
+            <tr class="identificador-content">
+                <td>
+                    <span class="identificador-nome">Aluno:</span>
+                    <input type="button" [(ngModel)]="aluno.nome" name="nomealuno">
+                </td>
+                <td>
+                    <span class="identificador-nome">Matrícula:</span>
+                    <input type="button" [(ngModel)]="aluno.matricula" name="matricula">
+                </td>
+                <td>
+                    <span class="identificador-nome">Status:</span>
+                    <input type="button" [(ngModel)]="aluno.status" name="status">
+                </td>
+            </tr>
+        </table>
+        <br>
+        <table class="text-center">
             <thead>
-                <tr>
+                <tr class="bg-blue">
                     <td ROWSPAN=2 class="text-center">
                         <b>Disciplina</b>
                     </td>
@@ -18,9 +35,9 @@
                     <th colspan="1">2 Bimestre</th>
                     <th colspan="1">3 Bimestre</th>
                     <th colspan="1">4 Bimestre</th>
-                    <th colspan="1">Média</th>
+                    <th rowspan="4">Média Final</th>
                 </tr>
-                <tr>
+                <tr class="bg-blue">
                     <th>Nota</th>
                     <th>Nota</th>
                     <th>Nota</th>
@@ -35,7 +52,6 @@
                     <td *ngFor="let sb of segundobimestre">{{sb.n1}}</td>
                     <td *ngFor="let tb of terceirobimestre">{{tb.n1}}</td>
                     <td *ngFor="let qb of quartobimestre">{{qb.n1}}</td>
-                    <td></td>
                 </tr>
                 <tr>
                     <th>Entrega das tarefas</th>
@@ -43,7 +59,6 @@
                     <td *ngFor="let sb of segundobimestre">{{sb.n2}}</td>
                     <td *ngFor="let tb of terceirobimestre">{{tb.n2}}</td>
                     <td *ngFor="let qb of quartobimestre">{{qb.n2}}</td>
-                    <td></td>
                 </tr>
                 <tr>
                     <th>Trabalho Bimestral</th>
@@ -51,7 +66,6 @@
                     <td *ngFor="let sb of segundobimestre">{{sb.n3}}</td>
                     <td *ngFor="let tb of terceirobimestre">{{tb.n3}}</td>
                     <td *ngFor="let qb of quartobimestre">{{qb.n3}}</td>
-                    <td></td>
                 </tr>
                 <tr>
                     <th>Prova Bimestral</th>
@@ -59,10 +73,8 @@
                     <td *ngFor="let sb of segundobimestre">{{sb.n4}}</td>
                     <td *ngFor="let tb of terceirobimestre">{{tb.n4}}</td>
                     <td *ngFor="let qb of quartobimestre">{{qb.n4}}</td>
-                    <td></td>
                 </tr>
             </tbody>
-            <br>
             <tbody>
                 <tr style="background: #e0e0e0;color:#000;">
                     <th>Média bimestral</th>
@@ -76,7 +88,7 @@
         </table>
 
         <tbody class="resultado-final">
-            <tr>
+            <tr class="bg-blue">
                 <th>Resultado final</th>
             </tr>
             <tr>

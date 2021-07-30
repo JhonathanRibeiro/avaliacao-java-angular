@@ -9,12 +9,24 @@
         </mat-expansion-panel-header>
 
         <form>
-            <div fxLayout="row" class="grid-container">
-                <mat-form-field fxFlex="30" class="grid-item">
-                    <input matInput disabled placeholder="Aluno" [(ngModel)]="aluno.nome" name="a">
-                </mat-form-field>
-            </div>
 
+            <table>
+                <tr class="identificador-content">
+                    <td>
+                        <span class="identificador-nome">Aluno:</span>
+                        <input type="button" [(ngModel)]="aluno.nome" name="nomealuno">
+                    </td>
+                    <td>
+                        <span class="identificador-nome">Matrícula:</span>
+                        <input type="button" [(ngModel)]="aluno.matricula" name="matricula">
+                    </td>
+                    <td>
+                        <span class="identificador-nome">Status:</span>
+                        <input type="button" [(ngModel)]="aluno.status" name="status">
+                    </td>
+                </tr>
+            </table>
+            <br>
             <table>
                 <thead>
                     <tr>

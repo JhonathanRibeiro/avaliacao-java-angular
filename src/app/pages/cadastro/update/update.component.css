@@ -1,3 +1,25 @@
+table,
+td,
+th {
+    border: 1px solid #3f3f3f;
+}
+
+th {
+    text-transform: uppercase;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+input[type=button] {
+    background-color: transparent;
+    border: none;
+    color: #333;
+    text-decoration: none;
+}
+
 .criar {
     position: fixed;
     bottom: 60px;
@@ -10,18 +32,6 @@
     grid-column-gap: 25px;
     grid-template-columns: auto auto auto;
     padding: 10px;
-}
-
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-td,
-th {
-    text-align: left;
-    padding: 8px;
 }
 
 .input {
