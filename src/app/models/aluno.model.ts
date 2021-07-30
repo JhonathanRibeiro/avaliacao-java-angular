@@ -1,7 +1,7 @@
 export interface Aluno {
     [x: string]: any;
     id?: number;
-    nome: String;
+    nome?: string;
     n1?: number;
     n2?: number;
     n3?: number;

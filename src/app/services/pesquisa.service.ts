@@ -14,9 +14,9 @@ export class PesquisaService {
     return this.http.get<Aluno[]>(environment.api+'/alunos');
   }
   
-  public getAlunoById(id: any): Observable<Aluno> {
+  public getAlunoById(id: any): Observable<Aluno[]> {
     const url = `${environment.api}/alunos/${id}`;
-    return this.http.get<Aluno>(url);
+    return this.http.get<Aluno[]>(url);
   }
 
 }

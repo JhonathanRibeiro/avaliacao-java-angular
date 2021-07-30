@@ -11,58 +11,131 @@
         <form>
             <div fxLayout="row" class="grid-container">
                 <mat-form-field fxFlex="30" class="grid-item">
-                    <input matInput placeholder="Aluno" [(ngModel)]="aluno.nome" name="aluno">
-                </mat-form-field>
-
-                <mat-form-field appearance="fill" class="grid-item">
-                    <mat-label>Bimestre</mat-label>
-                    <mat-select [(ngModel)]="aluno.bimestre" name="bimestre" type="number">
-                        <mat-option *ngFor="let bimestre of bimestres" [value]="bimestre.value">
-                            {{bimestre.viewValue}}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
-
-                <mat-form-field class="example-full-width" appearance="fill" class="grid-item">
-                    <mat-label>Faltas</mat-label>
-                    <input [(ngModel)]="aluno.faltas" name="faltas" matInput #falta maxlength="2" placeholder="Ex. 40" value="0">
-                    <mat-hint align="end">{{falta.value.length}} / 2</mat-hint>
+                    <input matInput disabled placeholder="Aluno" [(ngModel)]="aluno.nome" name="a">
                 </mat-form-field>
             </div>
 
             <table>
-                <tr>
-                    <th>Atividade</th>
-                    <th>Peso</th>
-                    <th>Nota</th>
-                </tr>
-                <tr>
-                    <td>Participação em sala de aula</td>
-                    <td>1.5</td>
-                    <td><input type="text" [(ngModel)]="aluno.n1" name="n1"></td>
-                </tr>
-                <tr>
-                    <td>Entrega das tarefas</td>
-                    <td>2.5</td>
-                    <td><input type="text" [(ngModel)]="aluno.n2" name="n2"></td>
-                </tr>
-                <tr>
-                    <td>Trabalho Bimestral</td>
-                    <td>3.0</td>
-                    <td><input type="text" [(ngModel)]="aluno.n3" name="n3"></td>
-                </tr>
-                <tr>
-                    <td>Prova Bimestral</td>
-                    <td>3.0</td>
-                    <td><input type="text" [(ngModel)]="aluno.n4" name="n4"></td>
-                </tr>
-            </table>
+                <thead>
+                    <tr>
+                        <td ROWSPAN=2 class="text-center">
+                            <b>Disciplina</b>
+                        </td>
+                        <td ROWSPAN=2 class="text-center">
+                            <b>Peso</b>
+                        </td>
+                        <th colspan="2">1 Bimestre</th>
+                        <th colspan="2">2 Bimestre</th>
+                        <th colspan="2">3 Bimestre</th>
+                        <th colspan="2">4 Bimestre</th>
+                    </tr>
+                    <tr>
+                        <th>Nota</th>
+                        <th>Falta</th>
+                        <th>Nota</th>
+                        <th>Falta</th>
+                        <th>Nota</th>
+                        <th>Falta</th>
+                        <th>Nota</th>
+                        <th>Falta</th>
+                    </tr>
+                </thead>
 
+                <tbody>
+                    <tr>
+                        <th>Participação em sala de aula</th>
+                        <td>1.2</td>
+                        <td *ngFor="let pb of primeirobimestre">
+                            <input [(ngModel)]="pb.n1" name="pbn1" maxlength="3" class="input">
+                        </td>
+                        <td *ngFor="let pb of primeirobimestre">
+                            <input [(ngModel)]="pb.faltas" name="pbfaltas" maxlength="3" class="input">
+                        </td>
+                        <td *ngFor="let sb of segundobimestre">
+                            <input [(ngModel)]="sb.n1" name="sbn1" maxlength="3" class="input">
+                        </td>
+                        <td *ngFor="let sb of segundobimestre">
+                            <input [(ngModel)]="sb.faltas" name="sbfaltas" maxlength="3" class="input">
+                        </td>
+                        <td *ngFor="let tb of terceirobimestre">
+                            <input [(ngModel)]="tb.n1" name="tbn1" maxlength="3" class="input">
+                        </td>
+                        <td *ngFor="let tb of terceirobimestre">
+                            <input [(ngModel)]="tb.faltas" name="tbfaltas" maxlength="3" class="input">
+                        </td>
+                        <td *ngFor="let qb of quartobimestre">
+                            <input [(ngModel)]="qb.n1" name="qbn1" maxlength="3" class="input">
+                        </td>
+                        <td *ngFor="let qb of quartobimestre">
+                            <input [(ngModel)]="qb.faltas" name="qbfaltas" maxlength="3" class="input">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Entrega das tarefas</th>
+                        <td>1.2</td>
+                        <td *ngFor="let pb of primeirobimestre">
+                            <input [(ngModel)]="pb.n2" name="pbn2" maxlength="3" class="input">
+                        </td>
+                        <td></td>
+                        <td *ngFor="let sb of segundobimestre">
+                            <input [(ngModel)]="sb.n2" name="sbn2" maxlength="3" class="input">
+                        </td>
+                        <td></td>
+                        <td *ngFor="let tb of terceirobimestre">
+                            <input [(ngModel)]="tb.n2" name="tbn2" maxlength="3" class="input">
+                        </td>
+                        <td></td>
+                        <td *ngFor="let qb of quartobimestre">
+                            <input [(ngModel)]="qb.n2" name="qbn2" maxlength="3" class="input">
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr *ngFor="let tb of terceirobimestre">
+                        <th>Trabalho Bimestral</th>
+                        <td>1.2</td>
+                        <td *ngFor="let pb of primeirobimestre">
+                            <input [(ngModel)]="pb.n3" name="pbn3" maxlength="3" class="input">
+                        </td>
+                        <td></td>
+                        <td *ngFor="let sb of segundobimestre">
+                            <input [(ngModel)]="sb.n3" name="sbn3" maxlength="3" class="input">
+                        </td>
+                        <td></td>
+                        <td *ngFor="let tb of terceirobimestre">
+                            <input [(ngModel)]="tb.n3" name="tbn3" maxlength="3" class="input">
+                        </td>
+                        <td></td>
+                        <td *ngFor="let qb of quartobimestre">
+                            <input [(ngModel)]="qb.n3" name="qbn3" maxlength="3" class="input">
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr *ngFor="let qb of quartobimestre">
+                        <th>Prova Bimestral</th>
+                        <td>1.2</td>
+                        <td *ngFor="let pb of primeirobimestre">
+                            <input [(ngModel)]="pb.n4" name="pbn4" maxlength="3" class="input">
+                        </td>
+                        <td></td>
+                        <td *ngFor="let sb of segundobimestre">
+                            <input [(ngModel)]="sb.n4" name="sbn4" maxlength="3" class="input">
+                        </td>
+                        <td></td>
+                        <td *ngFor="let tb of terceirobimestre">
+                            <input [(ngModel)]="tb.n4" name="tbn4" maxlength="3" class="input">
+                        </td>
+                        <td></td>
+                        <td *ngFor="let qb of quartobimestre">
+                            <input [(ngModel)]="qb.n4" name="qbn4" maxlength="3" class="input">
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
 
             <button class="criar" (click)="atualizar()" title="Salvar" mat-fab color="primary">
                 <i class="material-icons">done</i>
             </button>
         </form>
-
     </mat-expansion-panel>
 </mat-accordion>

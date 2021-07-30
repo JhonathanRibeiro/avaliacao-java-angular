@@ -24,6 +24,7 @@ export class TableComponent implements AfterViewInit, OnInit {
     this.lista.getAlunos().subscribe(alunos=>{
       this.alunos = alunos;
     });
+    
   }
 
   ngAfterViewInit(): void {

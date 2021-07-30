@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Aluno } from 'src/app/models/aluno.model';
 import { Atividades } from 'src/app/models/atividade.model';
@@ -16,7 +16,10 @@ import { PesquisaService } from 'src/app/services/pesquisa.service';
 export class UpdateComponent implements OnInit {
   panelOpenState = false;
   aluno: Aluno;
-  bimestre: [];
+  primeirobimestre: Aluno[];
+  segundobimestre: Aluno[];
+  terceirobimestre: Aluno[];
+  quartobimestre: Aluno[];
 
   bimestres: Bimestres[] = [
     { value: 1, viewValue: '1º Bimestre' },
@@ -46,24 +49,40 @@ export class UpdateComponent implements OnInit {
 
   atualizar(): void {
     this.service.updateAluno(this.aluno).subscribe(() => {
-     
+
       localStorage.setItem("item", JSON.stringify(this.aluno))
       this.msg.showMessage(`Registro do aluno ${this.aluno.nome} atualizado com sucesso!`);
       // this.router.navigate(['/']);
     });
   }
 
-  listaALuno() {
+  listaALuno(): void {
     const id = this.route.snapshot.paramMap.get('id');
     this.pesquisa.getAlunoById(id).subscribe(alunos => {
       this.aluno = alunos
 
-      this.aluno.bimestres.filter((bim: any)=>{
-        this.bimestre = bim;
-      
-        console.log(this.bimestre)
+      this.aluno.bimestres.filter((res: any) => {
+        switch (res.id) {
+          case 1:
+            this.primeirobimestre = Array(res)
+            console.log(this.primeirobimestre)
+            break;
+          case 2:
+            this.segundobimestre = Array(res)
+            console.log(this.segundobimestre)
+            break;
+          case 3:
+            this.terceirobimestre = Array(res)
+            console.log(this.terceirobimestre)
+            break;
+          case 4:
+            this.quartobimestre = Array(res)
+            console.log(this.quartobimestre)
+            break;
+          default:
+            break;
+        }
       })
-
     });
   }
 }

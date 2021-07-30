@@ -23,3 +23,8 @@ th {
     text-align: left;
     padding: 8px;
 }
+
+.input {
+    width: 25px;
+    margin: 0!important;
+}

@@ -8,7 +8,7 @@
             </mat-panel-title>
         </mat-expansion-panel-header>
 
-        <table border="1">
+        <table>
             <thead>
                 <tr>
                     <td ROWSPAN=2 class="text-center">
@@ -18,63 +18,71 @@
                     <th colspan="1">2 Bimestre</th>
                     <th colspan="1">3 Bimestre</th>
                     <th colspan="1">4 Bimestre</th>
-                    <th colspan="3">Avaliação/Situação</th>
+                    <th colspan="1">Média</th>
                 </tr>
                 <tr>
                     <th>Nota</th>
                     <th>Nota</th>
                     <th>Nota</th>
                     <th>Nota</th>
-                    <th>Média</th>
-                    <th>% Freq Total</th>
-                    <th>Situação</th>
                 </tr>
             </thead>
 
             <tbody>
                 <tr>
                     <th>Participação em sala de aula</th>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
+                    <td *ngFor="let pb of primeirobimestre">{{pb.n1}}</td>
+                    <td *ngFor="let sb of segundobimestre">{{sb.n1}}</td>
+                    <td *ngFor="let tb of terceirobimestre">{{tb.n1}}</td>
+                    <td *ngFor="let qb of quartobimestre">{{qb.n1}}</td>
+                    <td></td>
                 </tr>
                 <tr>
                     <th>Entrega das tarefas</th>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
+                    <td *ngFor="let pb of primeirobimestre">{{pb.n2}}</td>
+                    <td *ngFor="let sb of segundobimestre">{{sb.n2}}</td>
+                    <td *ngFor="let tb of terceirobimestre">{{tb.n2}}</td>
+                    <td *ngFor="let qb of quartobimestre">{{qb.n2}}</td>
+                    <td></td>
                 </tr>
                 <tr>
                     <th>Trabalho Bimestral</th>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
+                    <td *ngFor="let pb of primeirobimestre">{{pb.n3}}</td>
+                    <td *ngFor="let sb of segundobimestre">{{sb.n3}}</td>
+                    <td *ngFor="let tb of terceirobimestre">{{tb.n3}}</td>
+                    <td *ngFor="let qb of quartobimestre">{{qb.n3}}</td>
+                    <td></td>
                 </tr>
                 <tr>
                     <th>Prova Bimestral</th>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
+                    <td *ngFor="let pb of primeirobimestre">{{pb.n4}}</td>
+                    <td *ngFor="let sb of segundobimestre">{{sb.n4}}</td>
+                    <td *ngFor="let tb of terceirobimestre">{{tb.n4}}</td>
+                    <td *ngFor="let qb of quartobimestre">{{qb.n4}}</td>
+                    <td></td>
                 </tr>
             </tbody>
-
+            <br>
+            <tbody>
+                <tr style="background: #e0e0e0;color:#000;">
+                    <th>Média bimestral</th>
+                    <td><input type="button" [(ngModel)]="mediaprimeirobimestre"></td>
+                    <td><input type="button" [(ngModel)]="mediasegundobimestre"></td>
+                    <td><input type="button" [(ngModel)]="mediaterceirobimestre"></td>
+                    <td><input type="button" [(ngModel)]="mediaquartobimestre"></td>
+                    <td><input type="button" [(ngModel)]="mediafinal"></td>
+                </tr>
+            </tbody>
         </table>
+
+        <tbody class="resultado-final">
+            <tr>
+                <th>Resultado final</th>
+            </tr>
+            <tr>
+                <th>Aprovado</th>
+            </tr>
+        </tbody>
 
     </mat-expansion-panel>
 </mat-accordion>

@@ -1,8 +1,53 @@
-table, td, th {
-    border: 1px solid black;
-  }
-  
-  table {
+table,
+td,
+th {
+    border: 1px solid #868686;
+}
+
+th {
+    text-transform: uppercase;
+}
+
+table {
     width: 100%;
     border-collapse: collapse;
-  }
+    border-radius: 3px;
+}
+
+input[type=button] {
+    background-color: transparent;
+    border: none;
+    color: #333;
+    text-decoration: none;
+}
+
+.badge {
+    padding: 3px;
+    margin: -1px;
+}
+
+.bg-blue {
+    color: #f1f1f1;
+    background: #3067ff;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.resultado-final {
+    float: right;
+    padding-top: 10px;
+}
+
+.resultado-final tr>th {
+    padding: 5px 80px;
+}
+
+.resultado-final tr {
+    padding: 10px;
+}
