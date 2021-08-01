@@ -1,138 +1,136 @@
 <a routerLink="/">voltar</a>
 <br><br>
-<mat-accordion>
-    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-        <mat-expansion-panel-header>
-            <mat-panel-title>
-                <strong>Boletim escolar</strong>
-            </mat-panel-title>
-        </mat-expansion-panel-header>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            <strong class="titulo-atividade">
+                <i class="material-icons icon">view_list</i>
+                Boletim escolar</strong>
+        </mat-card-title>
+    </mat-card-header>
 
-        <table>
-            <tr class="identificador-content">
-                <td>
-                    <span class="identificador-nome">Aluno:</span>
-                    <input type="button" [(ngModel)]="aluno.nome" name="nomealuno">
+    <table>
+        <tr class="identificador-content">
+            <td>
+                <span class="identificador-nome">Aluno:</span>
+                <input type="button" [(ngModel)]="aluno.nome" name="nomealuno">
+            </td>
+            <td>
+                <span class="identificador-nome">Matrícula:</span>
+                <input type="button" [(ngModel)]="aluno.matricula" name="matricula">
+            </td>
+            <td>
+                <span class="identificador-nome">Status:</span>
+                <input type="button" [(ngModel)]="aluno.status" name="status">
+            </td>
+        </tr>
+    </table>
+    <table class="text-center styled-table boletim">
+        <thead>
+            <tr class="bg-blue">
+                <td ROWSPAN=2 class="text-center">
+                    <b>Disciplina</b>
                 </td>
-                <td>
-                    <span class="identificador-nome">Matrícula:</span>
-                    <input type="button" [(ngModel)]="aluno.matricula" name="matricula">
-                </td>
-                <td>
-                    <span class="identificador-nome">Status:</span>
-                    <input type="button" [(ngModel)]="aluno.status" name="status">
-                </td>
+                <th colspan="1">1º Bimestre</th>
+                <th colspan="1">2º Bimestre</th>
+                <th colspan="1">3º Bimestre</th>
+                <th colspan="1">4º Bimestre</th>
+                <th rowspan="4">Média Final</th>
             </tr>
-        </table>
-        <br>
-        <table class="text-center">
-            <thead>
-                <tr class="bg-blue">
-                    <td ROWSPAN=2 class="text-center">
-                        <b>Disciplina</b>
-                    </td>
-                    <th colspan="1">1 Bimestre</th>
-                    <th colspan="1">2 Bimestre</th>
-                    <th colspan="1">3 Bimestre</th>
-                    <th colspan="1">4 Bimestre</th>
-                    <th rowspan="4">Média Final</th>
-                </tr>
-                <tr class="bg-blue">
-                    <th>Nota</th>
-                    <th>Nota</th>
-                    <th>Nota</th>
-                    <th>Nota</th>
-                </tr>
-            </thead>
+            <tr class="bg-blue">
+                <th>Nota</th>
+                <th>Nota</th>
+                <th>Nota</th>
+                <th>Nota</th>
+            </tr>
+        </thead>
 
-            <tbody>
-                <tr>
-                    <th>Participação em sala de aula</th>
-                    <td *ngFor="let pb of primeirobimestre">{{pb.n1}}</td>
-                    <td *ngFor="let sb of segundobimestre">{{sb.n1}}</td>
-                    <td *ngFor="let tb of terceirobimestre">{{tb.n1}}</td>
-                    <td *ngFor="let qb of quartobimestre">{{qb.n1}}</td>
-                </tr>
-                <tr>
-                    <th>Entrega das tarefas</th>
-                    <td *ngFor="let pb of primeirobimestre">{{pb.n2}}</td>
-                    <td *ngFor="let sb of segundobimestre">{{sb.n2}}</td>
-                    <td *ngFor="let tb of terceirobimestre">{{tb.n2}}</td>
-                    <td *ngFor="let qb of quartobimestre">{{qb.n2}}</td>
-                </tr>
-                <tr>
-                    <th>Trabalho Bimestral</th>
-                    <td *ngFor="let pb of primeirobimestre">{{pb.n3}}</td>
-                    <td *ngFor="let sb of segundobimestre">{{sb.n3}}</td>
-                    <td *ngFor="let tb of terceirobimestre">{{tb.n3}}</td>
-                    <td *ngFor="let qb of quartobimestre">{{qb.n3}}</td>
-                </tr>
-                <tr>
-                    <th>Prova Bimestral</th>
-                    <td *ngFor="let pb of primeirobimestre">{{pb.n4}}</td>
-                    <td *ngFor="let sb of segundobimestre">{{sb.n4}}</td>
-                    <td *ngFor="let tb of terceirobimestre">{{tb.n4}}</td>
-                    <td *ngFor="let qb of quartobimestre">{{qb.n4}}</td>
-                </tr>
-            </tbody>
-            <tbody>
-                <tr style="background: #e0e0e0;color:#000;">
-                    <th>Média bimestral</th>
-                    <td><input type="button" [(ngModel)]="mediaprimeirobimestre"></td>
-                    <td><input type="button" [(ngModel)]="mediasegundobimestre"></td>
-                    <td><input type="button" [(ngModel)]="mediaterceirobimestre"></td>
-                    <td><input type="button" [(ngModel)]="mediaquartobimestre"></td>
-                    <td><input type="button" [(ngModel)]="mediafinal"></td>
-                </tr>
-            </tbody>
-        </table>
+        <tbody>
+            <tr>
+                <td class="titulo-atividade">Participação em sala de aula</td>
+                <td *ngFor="let pb of primeirobimestre">{{pb.n1}}</td>
+                <td *ngFor="let sb of segundobimestre">{{sb.n1}}</td>
+                <td *ngFor="let tb of terceirobimestre">{{tb.n1}}</td>
+                <td *ngFor="let qb of quartobimestre">{{qb.n1}}</td>
+            </tr>
+            <tr>
+                <td class="titulo-atividade">Entrega das tarefas</td>
+                <td *ngFor="let pb of primeirobimestre">{{pb.n2}}</td>
+                <td *ngFor="let sb of segundobimestre">{{sb.n2}}</td>
+                <td *ngFor="let tb of terceirobimestre">{{tb.n2}}</td>
+                <td *ngFor="let qb of quartobimestre">{{qb.n2}}</td>
+            </tr>
+            <tr>
+                <td class="titulo-atividade">Trabalho Bimestral</td>
+                <td *ngFor="let pb of primeirobimestre">{{pb.n3}}</td>
+                <td *ngFor="let sb of segundobimestre">{{sb.n3}}</td>
+                <td *ngFor="let tb of terceirobimestre">{{tb.n3}}</td>
+                <td *ngFor="let qb of quartobimestre">{{qb.n3}}</td>
+            </tr>
+            <tr>
+                <td class="titulo-atividade">Prova Bimestral</td>
+                <td *ngFor="let pb of primeirobimestre">{{pb.n4}}</td>
+                <td *ngFor="let sb of segundobimestre">{{sb.n4}}</td>
+                <td *ngFor="let tb of terceirobimestre">{{tb.n4}}</td>
+                <td *ngFor="let qb of quartobimestre">{{qb.n4}}</td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr style="background: #e0e0e0;color:#000;">
+                <td class="titulo-atividade">Média bimestral</td>
+                <td><input type="button" [(ngModel)]="mediaprimeirobimestre"></td>
+                <td><input type="button" [(ngModel)]="mediasegundobimestre"></td>
+                <td><input type="button" [(ngModel)]="mediaterceirobimestre"></td>
+                <td><input type="button" [(ngModel)]="mediaquartobimestre"></td>
+                <td><input type="button" [(ngModel)]="mediafinal"></td>
+            </tr>
+        </tbody>
+    </table>
 
+    <table>
         <tbody class="resultado-final">
             <tr class="bg-blue">
                 <th>Resultado final</th>
             </tr>
             <tr>
-                <th>
+                <td>
                     <input type="button" [(ngModel)]="situacao">
-                </th>
+                </td>
             </tr>
         </tbody>
-
-    </mat-expansion-panel>
-</mat-accordion>
+    </table>
+</mat-card>
 <br>
-<br>
-<mat-accordion>
-    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-        <mat-expansion-panel-header>
-            <mat-panel-title>
-                <strong>Frequência escolar</strong>
-            </mat-panel-title>
-        </mat-expansion-panel-header>
-
-        <table class="text-center">
-            <thead>
-                <tr class="bg-blue">
-                    <th>Nome</th>
-                    <th>Dias</th>
-                    <th>Faltas</th>
-                    <th>Freq%</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th>
-                        <input type="button" [(ngModel)]="aluno.nome">
-                    </th>
-                    <td>160</td>
-                    <td>
-                        <input type="button" [(ngModel)]="totalfaltas">
-                    </td>
-                    <td>
-                        <input type="button" [(ngModel)]="presenca">%
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </mat-expansion-panel>
-</mat-accordion>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            <strong class="titulo-atividade">
+                <i class="material-icons icon">watch_later</i>
+                Frequência escolar</strong>
+        </mat-card-title>
+    </mat-card-header>
+    <table class="text-center">
+        <thead>
+            <tr class="bg-blue">
+                <th>Nome</th>
+                <th>Dias</th>
+                <th>Faltas</th>
+                <th>Freq%</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <input type="button" [(ngModel)]="aluno.nome">
+                </td>
+                <td>160</td>
+                <td>
+                    <input type="button" [(ngModel)]="totalfaltas">
+                </td>
+                <td>
+                    <input type="button" [(ngModel)]="presenca">%
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</mat-card>

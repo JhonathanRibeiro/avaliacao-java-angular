@@ -5,8 +5,23 @@ body {
 
 body {
     margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-family: "Helvetica Neue", sans-serif;
     background: #fafafa;
+}
+
+
+/* alinha os ícones de ações ao centro */
+
+.mat-fab .mat-button-wrapper {
+    padding: 0!important;
+}
+
+
+/* cor do texto da sidebar */
+
+.mat-list-base .mat-list-item .mat-list-item-content,
+.mat-list-base .mat-list-option .mat-list-item-content {
+    color: #fff;
 }
 
 .text-white {
@@ -15,6 +30,10 @@ body {
 
 .danger {
     color: #e35e6b;
+}
+
+.material-icons {
+    vertical-align: middle;
 }
 
 .v-middle {
@@ -49,4 +68,24 @@ body {
     padding: 3px 12px;
     margin-left: -1px;
     color: #fff;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #2b58a0e6;
+    color: #ffffff;
+    text-align: center;
+}
+
+.titulo-atividade {
+    font-weight: 600;
+    font-size: 14px;
 }

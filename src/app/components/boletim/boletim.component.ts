@@ -88,13 +88,11 @@ export class BoletimComponent implements OnInit {
 
         this.mediafinal = this.getMediaFinal(this.mediasporbimestre)
 
-
-        if ((this.presenca < 75 && media < 5)? res.situacao = 'Reprovado':'')
-        if ((media >= 5 && media < 6)?res.situacao = 'Recuperação':'Aprovado')
-
+        // if ((this.presenca < 75 && media < 5)? res.situacao = 'Reprovado':'')
+        // if ((media >= 5 && media < 6)?res.situacao = 'Recuperação':'Aprovado')
         // if (this.presenca < 75 && media < 5) console.log( res.situacao = 'Reprovado');
         // if (media >= 5 && media < 6) console.log( res.situacao = 'Recuperação');
-        console.log( res.situacao = 'Aprovado');
+        console.log(this.presenca);
       })
     });
   }
