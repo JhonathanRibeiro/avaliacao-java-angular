@@ -1,4 +1,4 @@
-<a routerLink="/">voltar</a>
+<a routerLink="/">Voltar</a>
 <br><br>
 <mat-card>
     <mat-card-header>
@@ -8,20 +8,19 @@
                 Boletim escolar</strong>
         </mat-card-title>
     </mat-card-header>
-
     <table>
         <tr class="identificador-content">
             <td>
                 <span class="identificador-nome">Aluno:</span>
-                <input type="button" [(ngModel)]="aluno.nome" name="nomealuno">
+                <span> {{aluno.nome | uppercase}}</span>
             </td>
             <td>
                 <span class="identificador-nome">Matrícula:</span>
-                <input type="button" [(ngModel)]="aluno.matricula" name="matricula">
+                <span> {{aluno.matricula}}</span>
             </td>
             <td>
                 <span class="identificador-nome">Status:</span>
-                <input type="button" [(ngModel)]="aluno.status" name="status">
+                <span> {{aluno.status | uppercase}}</span>
             </td>
         </tr>
     </table>
@@ -78,11 +77,11 @@
         <tbody>
             <tr style="background: #e0e0e0;color:#000;">
                 <td class="titulo-atividade">Média bimestral</td>
-                <td><input type="button" [(ngModel)]="mediaprimeirobimestre"></td>
-                <td><input type="button" [(ngModel)]="mediasegundobimestre"></td>
-                <td><input type="button" [(ngModel)]="mediaterceirobimestre"></td>
-                <td><input type="button" [(ngModel)]="mediaquartobimestre"></td>
-                <td><input type="button" [(ngModel)]="mediafinal"></td>
+                <td><input type="button">{{mediaprimeirobimestre | number: '1.2-2'}}</td>
+                <td><input type="button">{{mediasegundobimestre | number: '1.2-2'}}</td>
+                <td><input type="button">{{mediaterceirobimestre | number: '1.2-2'}}</td>
+                <td><input type="button">{{mediaquartobimestre | number: '1.2-2'}}</td>
+                <td><input type="button">{{mediafinal | number: '1.2-2'}}</td>
             </tr>
         </tbody>
     </table>
@@ -94,7 +93,7 @@
             </tr>
             <tr>
                 <td>
-                    <input type="button" [(ngModel)]="situacao">
+                    <span>{{situacao | uppercase}}</span>
                 </td>
             </tr>
         </tbody>
@@ -121,14 +120,14 @@
         <tbody>
             <tr>
                 <td>
-                    <input type="button" [(ngModel)]="aluno.nome">
+                    <span> {{aluno.nome | uppercase}}</span>
                 </td>
                 <td>160</td>
                 <td>
-                    <input type="button" [(ngModel)]="totalfaltas">
+                    <span> {{totalfaltas}}</span>
                 </td>
                 <td>
-                    <input type="button" [(ngModel)]="presenca">%
+                    <span> {{presenca}}%</span>
                 </td>
             </tr>
         </tbody>

@@ -4,8 +4,8 @@
     <mat-card-header>
         <mat-card-title>
             <strong>
-                <i class="material-icons card-description">description</i>
-                Lançamento de notas e faltas</strong>
+            <i class="material-icons card-description">description</i>
+            Lançamento de notas e faltas</strong>
         </mat-card-title>
     </mat-card-header>
     <form>
@@ -13,15 +13,15 @@
             <tr class="identificador-content">
                 <td>
                     <span class="identificador-nome">Aluno:</span>
-                    <input type="button" [(ngModel)]="aluno.nome" name="nomealuno">
+                    <span> {{aluno.nome}}</span>
                 </td>
                 <td>
                     <span class="identificador-nome">Matrícula:</span>
-                    <input type="button" [(ngModel)]="aluno.matricula" name="matricula">
+                    <span> {{aluno.matricula}}</span>
                 </td>
                 <td>
                     <span class="identificador-nome">Status:</span>
-                    <input type="button" [(ngModel)]="aluno.status" name="status">
+                    <span> {{aluno.status}}</span>
                 </td>
             </tr>
         </table>
@@ -35,10 +35,10 @@
                     <td ROWSPAN=2 class="text-center">
                         <b>Peso</b>
                     </td>
-                    <th colspan="2">1 Bimestre</th>
-                    <th colspan="2">2 Bimestre</th>
-                    <th colspan="2">3 Bimestre</th>
-                    <th colspan="2">4 Bimestre</th>
+                    <th colspan="2">1º Bimestre</th>
+                    <th colspan="2">2º Bimestre</th>
+                    <th colspan="2">3º Bimestre</th>
+                    <th colspan="2">4º Bimestre</th>
                 </tr>
                 <tr>
                     <th>Nota</th>
@@ -57,16 +57,16 @@
                     <th class="titulo-atividade">Participação em sala de aula</th>
                     <td>1.2</td>
                     <td *ngFor="let pb of primeirobimestre">
-                        <input [(ngModel)]="pb.n1" name="pbn1" maxlength="3" class="input">
+                        <input [(ngModel)]="pb.n1" name="pbn1" maxlength="3" class="input" type="number">
                     </td>
                     <td *ngFor="let pb of primeirobimestre">
-                        <input [(ngModel)]="pb.faltas" name="pbfaltas" maxlength="3" class="input">
+                        <input [(ngModel)]="pb.faltas" name="pbfaltas" maxlength="3" class="input" type="number">
                     </td>
                     <td *ngFor="let sb of segundobimestre">
-                        <input [(ngModel)]="sb.n1" name="sbn1" maxlength="3" class="input">
+                        <input [(ngModel)]="sb.n1" name="sbn1" maxlength="3" class="input" type="number">
                     </td>
                     <td *ngFor="let sb of segundobimestre">
-                        <input [(ngModel)]="sb.faltas" name="sbfaltas" maxlength="3" class="input">
+                        <input [(ngModel)]="sb.faltas" name="sbfaltas" maxlength="3" class="input" type="number">
                     </td>
                     <td *ngFor="let tb of terceirobimestre">
                         <input [(ngModel)]="tb.n1" name="tbn1" maxlength="3" class="input">
@@ -145,7 +145,7 @@
         </table>
 
         <button class="criar" (click)="atualizar()" title="Salvar" mat-fab color="primary">
-            <i class="material-icons">done</i>
-        </button>
+        <i class="material-icons">done</i>
+    </button>
     </form>
 </mat-card>

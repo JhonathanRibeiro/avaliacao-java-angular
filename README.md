@@ -8,8 +8,6 @@ Criar um projeto Java/Angular que possibilite o lançamento de notas e faltas de
 - Visualizar a frequência escolar de cada aluno
 - Inserir notas e faltas por bimestre
 - Visualizar o boletim escolar de cada aluno
-- Cadastrar um novo aluno
-
 
 ## Tecnologias e Linguagens utilizadas
 - Nodejs

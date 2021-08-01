@@ -52,8 +52,17 @@ td {
 }
 
 .input {
-    width: 25px;
+    width: 35px;
     margin: 0!important;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
 }
 
 input:focus {

@@ -14,7 +14,6 @@ import { PesquisaService } from 'src/app/services/pesquisa.service';
 })
 
 export class UpdateComponent implements OnInit {
-  panelOpenState = false;
   aluno: Aluno;
   primeirobimestre: Aluno[];
   segundobimestre: Aluno[];
