@@ -24,8 +24,6 @@ Instalando com npm:
 
 ```npm i -g @angular/cli```
 
-Antes de executar a instalação é necessário verificar as dependências do seu projeto, algumas delas precisam estar de acordo com a versão do Angular (elas podem ser encontradas no arquivo package.json localizado na raiz da aplicação).
-
 ## Instalação
 - Baixe ou clone este repositório usando ```git clone https://github.com/JhonathanRibeiro/avaliacao-java-angular.git```
 - Dentro do diretório 'avaliacao-java-angular', instale as dependências usando ```npm install```
