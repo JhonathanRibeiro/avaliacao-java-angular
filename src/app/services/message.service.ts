@@ -12,7 +12,8 @@ export class MessageService {
     this.snackBar.open(msg, '', {
       duration: 3000,
       horizontalPosition: "right",
-      verticalPosition: "top"
+      verticalPosition: "top",
+      panelClass: ['alert-success']
     })
   }
 
