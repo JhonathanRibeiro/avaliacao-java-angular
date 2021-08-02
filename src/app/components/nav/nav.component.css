@@ -1,5 +1,7 @@
 .sidenav {
     background-color: #2b58a0;
+    overflow: hidden;
+    padding: 10px 13px!important;
 }
 
 .sidenav a {
@@ -7,9 +9,19 @@
 }
 
 .sidenav i {
-    padding-right: 10px;
+    padding-right: 5px;
 }
 
 .content {
     padding: 16px;
+}
+
+.menu-item {
+    border-radius: 9px;
+    margin: 21px 3px;
+    background: #607fb187;
+}
+
+.mat-drawer-inner-container {
+    overflow: hidden!important;
 }

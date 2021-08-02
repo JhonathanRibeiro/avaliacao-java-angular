@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Aluno } from 'src/app/models/aluno.model';
 import { CadastrosService } from 'src/app/services/cadastros.service';
 import { MessageService } from 'src/app/services/message.service';
@@ -18,32 +18,29 @@ export class UpdateComponent implements OnInit {
   terceirobimestre: Aluno[];
   quartobimestre: Aluno[];
 
-  pbn1:any;
-
   constructor(
     private msg: MessageService,
     private service: CadastrosService,
     private pesquisa: PesquisaService,
     private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
     this.listaALuno();
   }
-  // localStorage.setItem("dados", JSON.stringify(res));
 
   atualizar(): void {
-   console.log(this.pbn1)
-    // this.service.updateAluno(this.aluno).subscribe(() => {
-
-    //   this.msg.showMessage(`Registro do aluno ${this.aluno.nome} atualizado com sucesso!`);
-    // });
+    this.service.updateAluno(this.aluno).subscribe(() => {
+      this.msg.showMessage(`Registro do aluno ${this.aluno.nome} atualizado com sucesso!`);
+      this.router.navigate(['/']);
+    });
   }
 
   listaALuno(): void {
-      const id = this.route.snapshot.paramMap.get('id');
-      this.pesquisa.getAlunoById(id).subscribe(alunos => {
-        this.aluno = alunos
+    const id = this.route.snapshot.paramMap.get('id');
+    this.pesquisa.getAlunoById(id).subscribe(alunos => {
+      this.aluno = alunos
 
       this.aluno.bimestres.filter((res: any) => {
         switch (res.id) {
@@ -65,4 +62,14 @@ export class UpdateComponent implements OnInit {
       });
     });
   }
+
+  public validator(): void {
+    const inputs = Array.from(document.querySelectorAll('.input'));
+    const arrayInputs = [...inputs];
+
+    arrayInputs.filter(res => {
+      console.log(`Resultados: ${res}`)
+    });
+  }
+
 }

@@ -7,11 +7,7 @@
                         <i class="material-icons">menu</i>
                     </mat-list-item>
                 </div>
-                <div fxLayoutAlign="center left" *ngIf="isExpanded">
-                    <mat-list-item>
-                        <img class="logo" src="assets/img/educacao.png" alt="logo">
-                    </mat-list-item>
-                </div>
+
                 <div fxLayoutAlign="center center" *ngIf="isExpanded">
                     <span>
                         Educação<br>
@@ -20,7 +16,7 @@
                 </div>
             </div>
 
-            <mat-list-item routerLink="/diario-escolar">
+            <mat-list-item routerLink="/diario-escolar" class="menu-item">
                 <i class="material-icons">sticky_note_2</i>
                 <span *ngIf="isExpanded">Diário escolar</span>
             </mat-list-item>

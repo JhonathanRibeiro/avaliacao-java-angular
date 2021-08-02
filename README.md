@@ -12,10 +12,9 @@ Criar um projeto Java/Angular que possibilite o lançamento de notas e faltas de
 ## Tecnologias e Linguagens utilizadas
 - Nodejs
 - Angular CLI
-- Java(Quarkus)
 - HTML/CSS/JavaScript
 - Typescript
-- PostgreSQL
+- Json-Server
 - VSCode
 
 ## Pré-requisitos
@@ -60,17 +59,30 @@ Veja abaixo a lista de dependências e as versões compatíveis, elas devem ser 
     "typescript": "~4.2.3"
   }
 ```
+### JSON-Server
+O JSON Server é um pacote npm que permite simular uma API e isso facilita muito o desenvolvimento de aplicações. Com ele nós vamos simular um banco de dados e por meio de um URL, será possível testar requisições. Para instalar, execute o comando ```npm install -g json-server``` em seguida, nevegue até o diretório do projeto, dentro do diretório ```src/assets``` irá conter o arquivo JSON que iremos utilizar como base de dados, ```db.json```. Dentro do diretório, execute o comando ```json-server --watch db.json```, após executar esse comando deveremos ter uma API REST rodando em http://localhost:3000/alunos. Com isto estamos prontos para seguir com a instalação e executar o projeto. 
 
 ## Instalação
 - Baixe ou clone este repositório usando ```git clone https://github.com/JhonathanRibeiro/avaliacao-java-angular.git```
 - Dentro do diretório 'avaliacao-java-angular', instale as dependências usando ```npm install```
 
 ## Como executar
-- Execute ng serve para executar a versão de desenvolvimento. Depois acesse ```http://localhost:4200/```
-- Para executar o servidor de endpoints de API, em um outro terminal na mesma pasta execute ```npm run json-server```. A API poderá ser acessada via ```http://localhost:3000/```
+- Execute ```ng serve``` para executar a versão de desenvolvimento. Depois acesse ```http://localhost:4200/```. 
+- O servidor de endpoints JSON-server já estará rodando, sse caso desejar a API poderá ser acessada via ```http://localhost:3000/alunos```
 
 ## Como compilar/construir
 - Execute ```ng build``` para buildar o projeto. Para buildar a versão de produção adicione a flag ```--prod```. Os arquivos serão armazenados do diretório ```dist```.
 
+## Visão geral
+Após instalar e executar o projeto, ao acessar o mesmo você irá ser direcionado para a tela principal da aplicação:
+![image](https://user-images.githubusercontent.com/37172038/127805230-3cb51617-9679-4192-a26f-79b0e6492804.png)
 
+Observe que existe apenas um link no menu de navegação a esquerda, que representa a tela atual, as outras telas poderão ser acessadas por meio dos botões de ações que são exibidos ao passar o mouse pela listagem dos alunos:
+![image](https://user-images.githubusercontent.com/37172038/127805351-709ec419-4270-4c74-8c01-e03be9009663.png)
 
+O primeiro ícone irá redirecionar para a tela do boletim escolar, onde será possível visualizar as notas separadas por bimestres, a nota final, frequência escolar e a situação do aluno:
+![image](https://user-images.githubusercontent.com/37172038/127805443-e8169406-36fe-4957-b624-aa59723e7dcf.png)
+obs.Cada um dos alunos possui uma das situações possíveis conforme as condições propostas no roteiro do projeto
+
+O segundo ícone irá redirecionar para a tela de lançamento de notas e faltas, onde será possível atualizar as notas e faltas dos alunos separados por bimestre:
+![image](https://user-images.githubusercontent.com/37172038/127805620-ce59e4a9-c53b-4d52-99f0-464abc3d18a0.png)
