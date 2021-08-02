@@ -31,10 +31,18 @@ export class UpdateComponent implements OnInit {
   }
 
   atualizar(): void {
-    this.service.updateAluno(this.aluno).subscribe(() => {
-      this.msg.showMessage(`Registro do aluno ${this.aluno.nome} atualizado com sucesso!`);
-      this.router.navigate(['/']);
-    });
+    const f1 = parseInt((document.querySelector('#f1') as HTMLInputElement).value);
+    const f2 = parseInt((document.querySelector('#f2') as HTMLInputElement).value);
+    const f3 = parseInt((document.querySelector('#f3') as HTMLInputElement).value);
+    const f4 = parseInt((document.querySelector('#f4') as HTMLInputElement).value);
+    if(f1 > 40 || f2 > 40 || f3 > 40 || f4 > 40) {
+      alert('O número de faltas não pode ser maior do que 40.')
+    } else {
+     this.service.updateAluno(this.aluno).subscribe(() => {
+       this.msg.showMessage(`Registro do aluno ${this.aluno.nome} atualizado com sucesso!`);
+       this.router.navigate(['/']);
+     });
+    }
   }
 
   listaALuno(): void {
@@ -62,14 +70,4 @@ export class UpdateComponent implements OnInit {
       });
     });
   }
-
-  public validator(): void {
-    const inputs = Array.from(document.querySelectorAll('.input'));
-    const arrayInputs = [...inputs];
-
-    arrayInputs.filter(res => {
-      console.log(`Resultados: ${res}`)
-    });
-  }
-
 }
