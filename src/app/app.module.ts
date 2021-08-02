@@ -27,6 +27,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { DocumentacaoComponent } from './pages/documentacao/documentacao.component';
 import { BoletimComponent } from './components/boletim/boletim.component';
+import { IdentificacaoAlunoComponent } from './components/identificacao-aluno/identificacao-aluno.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { BoletimComponent } from './components/boletim/boletim.component';
     LoadingComponent,
     TableComponent,
     DocumentacaoComponent,
-    BoletimComponent
+    BoletimComponent,
+    IdentificacaoAlunoComponent
   ],
   imports: [
     BrowserModule,

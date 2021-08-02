@@ -5,24 +5,12 @@
         <mat-card-title>
             <strong class="titulo-atividade">
                 <i class="material-icons icon">view_list</i>
-                Boletim escolar</strong>
+                Boletim escolar
+            </strong>
         </mat-card-title>
     </mat-card-header>
     <table>
-        <tr class="identificador-content">
-            <td>
-                <span class="identificador-nome">Aluno:</span>
-                <span> {{aluno.nome | uppercase}}</span>
-            </td>
-            <td>
-                <span class="identificador-nome">Matrícula:</span>
-                <span> {{aluno.matricula}}</span>
-            </td>
-            <td>
-                <span class="identificador-nome">Status:</span>
-                <span> {{aluno.status | uppercase}}</span>
-            </td>
-        </tr>
+        <app-identificacao-aluno></app-identificacao-aluno>
     </table>
     <table class="text-center styled-table boletim">
         <thead>
@@ -75,13 +63,13 @@
             </tr>
         </tbody>
         <tbody>
-            <tr style="background: #e0e0e0;color:#000;">
+            <tr style="background: #e0e0e0;" class="font-weight-bold">
                 <td class="titulo-atividade">Média bimestral</td>
-                <td><input type="button">{{mediaprimeirobimestre | number: '1.2-2'}}</td>
-                <td><input type="button">{{mediasegundobimestre | number: '1.2-2'}}</td>
-                <td><input type="button">{{mediaterceirobimestre | number: '1.2-2'}}</td>
-                <td><input type="button">{{mediaquartobimestre | number: '1.2-2'}}</td>
-                <td><input type="button">{{mediafinal | number: '1.2-2'}}</td>
+                <td><span>{{mediaprimeirobimestre | number: '1.2-2'}}</span></td>
+                <td><span>{{mediasegundobimestre | number: '1.2-2'}}</span></td>
+                <td><span>{{mediaterceirobimestre | number: '1.2-2'}}</span></td>
+                <td><span>{{mediaquartobimestre | number: '1.2-2'}}</span></td>
+                <td class="bg-muted"><span>{{mediafinal | number: '1.2-2'}}</span></td>
             </tr>
         </tbody>
     </table>
@@ -92,8 +80,13 @@
                 <th>Resultado final</th>
             </tr>
             <tr>
-                <td>
-                    <span>{{situacao | uppercase}}</span>
+                <td class="text-center font-weight-bold">
+                    <span [ngClass]="{
+                        'text-success': situacao === 'Aprovado',
+                        'text-warning': situacao === 'Recuperação',
+                        'text-danger': situacao  === 'Reprovado'}">
+                        {{situacao | uppercase}}
+                    </span>
                 </td>
             </tr>
         </tbody>
@@ -127,7 +120,7 @@
                     <span> {{totalfaltas}}</span>
                 </td>
                 <td>
-                    <span> {{presenca}}%</span>
+                    <span> {{ calculoFrequencia(totalfaltas) | number: '1.0-0'}}%</span>
                 </td>
             </tr>
         </tbody>

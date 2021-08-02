@@ -1,4 +1,4 @@
-<a routerLink="/">voltar</a>
+<a routerLink="/">Voltar</a>
 <br><br>
 <mat-card>
     <mat-card-header>
@@ -9,23 +9,7 @@
         </mat-card-title>
     </mat-card-header>
     <form>
-        <table class="styled-table">
-            <tr class="identificador-content">
-                <td>
-                    <span class="identificador-nome">Aluno:</span>
-                    <span> {{aluno.nome}}</span>
-                </td>
-                <td>
-                    <span class="identificador-nome">Matrícula:</span>
-                    <span> {{aluno.matricula}}</span>
-                </td>
-                <td>
-                    <span class="identificador-nome">Status:</span>
-                    <span> {{aluno.status}}</span>
-                </td>
-            </tr>
-        </table>
-
+        <app-identificacao-aluno></app-identificacao-aluno>
         <table class="styled-table">
             <thead>
                 <tr>
@@ -52,10 +36,10 @@
                 </tr>
             </thead>
 
-            <tbody>
+            <tbody class="text-center">
                 <tr>
                     <th class="titulo-atividade">Participação em sala de aula</th>
-                    <td>1.2</td>
+                    <td>1.5</td>
                     <td *ngFor="let pb of primeirobimestre">
                         <input [(ngModel)]="pb.n1" name="pbn1" maxlength="3" class="input" type="number">
                     </td>
@@ -69,75 +53,75 @@
                         <input [(ngModel)]="sb.faltas" name="sbfaltas" maxlength="3" class="input" type="number">
                     </td>
                     <td *ngFor="let tb of terceirobimestre">
-                        <input [(ngModel)]="tb.n1" name="tbn1" maxlength="3" class="input">
+                        <input [(ngModel)]="tb.n1" name="tbn1" maxlength="3" class="input" type="number">
                     </td>
                     <td *ngFor="let tb of terceirobimestre">
-                        <input [(ngModel)]="tb.faltas" name="tbfaltas" maxlength="3" class="input">
+                        <input [(ngModel)]="tb.faltas" name="tbfaltas" maxlength="3" class="input" type="number">
                     </td>
                     <td *ngFor="let qb of quartobimestre">
-                        <input [(ngModel)]="qb.n1" name="qbn1" maxlength="3" class="input">
+                        <input [(ngModel)]="qb.n1" name="qbn1" maxlength="3" class="input" type="number">
                     </td>
                     <td *ngFor="let qb of quartobimestre">
-                        <input [(ngModel)]="qb.faltas" name="qbfaltas" maxlength="3" class="input">
+                        <input [(ngModel)]="qb.faltas" name="qbfaltas" maxlength="3" class="input" type="number">
                     </td>
                 </tr>
                 <tr>
                     <th class="titulo-atividade">Entrega das tarefas</th>
-                    <td>1.2</td>
+                    <td>2.5</td>
                     <td *ngFor="let pb of primeirobimestre">
-                        <input [(ngModel)]="pb.n2" name="pbn2" maxlength="3" class="input">
+                        <input [(ngModel)]="pb.n2" name="pbn2" maxlength="3" class="input" type="number">
                     </td>
                     <td></td>
                     <td *ngFor="let sb of segundobimestre">
-                        <input [(ngModel)]="sb.n2" name="sbn2" maxlength="3" class="input">
+                        <input [(ngModel)]="sb.n2" name="sbn2" maxlength="3" class="input" type="number">
                     </td>
                     <td></td>
                     <td *ngFor="let tb of terceirobimestre">
-                        <input [(ngModel)]="tb.n2" name="tbn2" maxlength="3" class="input">
+                        <input [(ngModel)]="tb.n2" name="tbn2" maxlength="3" class="input" type="number">
                     </td>
                     <td></td>
                     <td *ngFor="let qb of quartobimestre">
-                        <input [(ngModel)]="qb.n2" name="qbn2" maxlength="3" class="input">
+                        <input [(ngModel)]="qb.n2" name="qbn2" maxlength="3" class="input" type="number">
                     </td>
                     <td></td>
                 </tr>
                 <tr *ngFor="let tb of terceirobimestre">
                     <th class="titulo-atividade">Trabalho Bimestral</th>
-                    <td>1.2</td>
+                    <td>3.0</td>
                     <td *ngFor="let pb of primeirobimestre">
-                        <input [(ngModel)]="pb.n3" name="pbn3" maxlength="3" class="input">
+                        <input [(ngModel)]="pb.n3" name="pbn3" maxlength="3" class="input" type="number">
                     </td>
                     <td></td>
                     <td *ngFor="let sb of segundobimestre">
-                        <input [(ngModel)]="sb.n3" name="sbn3" maxlength="3" class="input">
+                        <input [(ngModel)]="sb.n3" name="sbn3" maxlength="3" class="input" type="number">
                     </td>
                     <td></td>
                     <td *ngFor="let tb of terceirobimestre">
-                        <input [(ngModel)]="tb.n3" name="tbn3" maxlength="3" class="input">
+                        <input [(ngModel)]="tb.n3" name="tbn3" maxlength="3" class="input" type="number">
                     </td>
                     <td></td>
                     <td *ngFor="let qb of quartobimestre">
-                        <input [(ngModel)]="qb.n3" name="qbn3" maxlength="3" class="input">
+                        <input [(ngModel)]="qb.n3" name="qbn3" maxlength="3" class="input" type="number">
                     </td>
                     <td></td>
                 </tr>
                 <tr *ngFor="let qb of quartobimestre">
                     <th class="titulo-atividade">Prova Bimestral</th>
-                    <td>1.2</td>
+                    <td>3.0</td>
                     <td *ngFor="let pb of primeirobimestre">
-                        <input [(ngModel)]="pb.n4" name="pbn4" maxlength="3" class="input">
+                        <input [(ngModel)]="pb.n4" name="pbn4" maxlength="3" class="input" type="number">
                     </td>
                     <td></td>
                     <td *ngFor="let sb of segundobimestre">
-                        <input [(ngModel)]="sb.n4" name="sbn4" maxlength="3" class="input">
+                        <input [(ngModel)]="sb.n4" name="sbn4" maxlength="3" class="input" type="number">
                     </td>
                     <td></td>
                     <td *ngFor="let tb of terceirobimestre">
-                        <input [(ngModel)]="tb.n4" name="tbn4" maxlength="3" class="input">
+                        <input [(ngModel)]="tb.n4" name="tbn4" maxlength="3" class="input" type="number">
                     </td>
                     <td></td>
                     <td *ngFor="let qb of quartobimestre">
-                        <input [(ngModel)]="qb.n4" name="qbn4" maxlength="3" class="input">
+                        <input [(ngModel)]="qb.n4" name="qbn4" maxlength="3" class="input" type="number">
                     </td>
                     <td></td>
                 </tr>

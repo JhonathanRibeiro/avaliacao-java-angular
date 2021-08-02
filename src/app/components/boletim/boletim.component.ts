@@ -9,7 +9,6 @@ import { PesquisaService } from 'src/app/services/pesquisa.service';
   styleUrls: ['./boletim.component.css']
 })
 export class BoletimComponent implements OnInit {
-  panelOpenState = false;
   aluno: Aluno;
 
   primeirobimestre: Aluno[];
@@ -21,6 +20,7 @@ export class BoletimComponent implements OnInit {
   mediasegundobimestre: number;
   mediaterceirobimestre: number;
   mediaquartobimestre: number;
+
   mediasporbimestre: Array<any>;
 
   mediafinal: any;
@@ -44,11 +44,10 @@ export class BoletimComponent implements OnInit {
 
       this.aluno.bimestres.filter((res: any) => {
         this.totalfaltas = this.totalfaltas + parseInt(res.faltas)
-        console.log(this.totalfaltas);
 
         this.presenca = parseInt(this.calculoFrequencia(this.totalfaltas).toFixed(2))
         const result = Array(res);
-
+        
         const gradList = [
           res.n1,
           res.n2,
@@ -56,44 +55,17 @@ export class BoletimComponent implements OnInit {
           res.n4
         ]
 
-        const media = parseFloat(this.getMediaBimestral(gradList).toFixed(2))
+        const media = parseFloat(this.getMediaBimestral(gradList).toFixed(2));
+        this.mediaBimestral(media, result, res);
 
-        switch (res.id) {
-          case 1:
-            this.primeirobimestre = result;
-            this.mediaprimeirobimestre = media;
-            break;
-          case 2:
-            this.segundobimestre = result;
-            this.mediasegundobimestre = media;
-            break;
-          case 3:
-            this.terceirobimestre = result;
-            this.mediaterceirobimestre = media;
-            break;
-          case 4:
-            this.quartobimestre = result;
-            this.mediaquartobimestre = media;
-            break;
-          default:
-            break;
+        if(this.presenca < 75 && this.mediafinal < 5) {
+          this.situacao = 'Reprovado';
+        } else if (this.mediafinal >= 5 && this.mediafinal < 6) {
+          this.situacao = 'Recuperação';
+        } else {
+          this.situacao = 'Aprovado';
         }
-
-        this.mediasporbimestre = [
-          this.mediaprimeirobimestre,
-          this.mediasegundobimestre,
-          this.mediaterceirobimestre,
-          this.mediaquartobimestre
-        ]
-
-        this.mediafinal = this.getMediaFinal(this.mediasporbimestre)
-
-        // if ((this.presenca < 75 && media < 5)? res.situacao = 'Reprovado':'')
-        // if ((media >= 5 && media < 6)?res.situacao = 'Recuperação':'Aprovado')
-        // if (this.presenca < 75 && media < 5) console.log( res.situacao = 'Reprovado');
-        // if (media >= 5 && media < 6) console.log( res.situacao = 'Recuperação');
-        console.log(this.presenca);
-      })
+      });
     });
   }
 
@@ -103,17 +75,17 @@ export class BoletimComponent implements OnInit {
     for (let i = 0; i < items; i++) {
       sum += gradeList[i]
     }
-    const result = sum / items
-    return result
+    const mediafinal = sum / items
+    return mediafinal
   }
 
   public getMediaBimestral(gradeList: any) {
     let items = gradeList.length
-    let sum = 0
+    let mediaBimestral = 0
     for (let i = 0; i < items; i++) {
-      sum += gradeList[i]
+      mediaBimestral += gradeList[i]
     }
-    return sum
+    return mediaBimestral
   }
 
   public calculoFrequencia(freq: any) {
@@ -125,4 +97,37 @@ export class BoletimComponent implements OnInit {
     let a = n * 100;
     return a;
   }
+
+  public mediaBimestral(media: number, result:any, res: any): void {
+    switch (res.id) {
+      case 1:
+        this.primeirobimestre = result;
+        this.mediaprimeirobimestre = media;
+        break;
+      case 2:
+        this.segundobimestre = result;
+        this.mediasegundobimestre = media;
+        break;
+      case 3:
+        this.terceirobimestre = result;
+        this.mediaterceirobimestre = media;
+        break;
+      case 4:
+        this.quartobimestre = result;
+        this.mediaquartobimestre = media;
+        break;
+      default:
+        break;
+    }
+
+    this.mediasporbimestre = [
+      this.mediaprimeirobimestre,
+      this.mediasegundobimestre,
+      this.mediaterceirobimestre,
+      this.mediaquartobimestre
+    ]
+
+    this.mediafinal = this.getMediaFinal(this.mediasporbimestre)
+  }
+
 }

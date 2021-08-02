@@ -1,13 +1,13 @@
 <mat-sidenav-container class="" autosize>
     <mat-sidenav #sidenav class="sidenav" mode="side" opened fixedInViewport="true">
         <mat-nav-list class="nav-list">
-            <div class="text-white" fxLayout="row" fxLayoutGap="10px">
+            <div class="text-white" fxLayout="row">
                 <div fxLayoutAlign="center center">
                     <mat-list-item (click)="isExpanded = !isExpanded">
                         <i class="material-icons">menu</i>
                     </mat-list-item>
                 </div>
-                <div fxLayoutAlign="center center" *ngIf="isExpanded">
+                <div fxLayoutAlign="center left" *ngIf="isExpanded">
                     <mat-list-item>
                         <img class="logo" src="assets/img/educacao.png" alt="logo">
                     </mat-list-item>
@@ -24,11 +24,10 @@
                 <i class="material-icons">sticky_note_2</i>
                 <span *ngIf="isExpanded">Diário escolar</span>
             </mat-list-item>
-            <mat-list-item routerLink="/documentacao">
+            <!-- <mat-list-item routerLink="/documentacao">
                 <i class="material-icons">sticky_note_2</i>
                 <span *ngIf="isExpanded">Documentação</span>
-            </mat-list-item>
-
+            </mat-list-item> -->
         </mat-nav-list>
     </mat-sidenav>
 
