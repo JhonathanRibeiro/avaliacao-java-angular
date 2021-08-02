@@ -30,13 +30,13 @@ Antes de executar a instalação é necessário verificar as dependências do se
 - Baixe ou clone este repositório usando ```git clone https://github.com/JhonathanRibeiro/avaliacao-java-angular.git```
 - Dentro do diretório 'avaliacao-java-angular', instale as dependências usando ```npm install```
 
-## Como executar
-- Execute ```ng serve``` para startar a versão de desenvolvimento. Depois acesse ```http://localhost:4200/```. 
-
 ### JSON-Server
 O JSON Server é um pacote npm que permite simular uma API e isso facilita muito o desenvolvimento de aplicações. Com ele nós vamos simular um banco de dados e por meio de um URL, será possível testar requisições. Para instalar, execute o comando ```npm install -g json-server``` em seguida, nevegue até o diretório do projeto, dentro do diretório ```src/assets``` irá conter o arquivo JSON que iremos utilizar como base de dados, ```db.json```. Dentro do diretório, execute o comando ```json-server --watch db.json```, após executar esse comando deveremos ter uma API REST rodando em http://localhost:3000/alunos. Com isto estamos prontos. :)
 ![image](https://user-images.githubusercontent.com/37172038/127853849-b16d0a92-634f-4b76-8a7a-bc8d2492bcf7.png)
 
+
+## Como executar
+- Execute ```ng serve``` para startar a versão de desenvolvimento. Depois acesse ```http://localhost:4200/```. 
 
 Veja abaixo a lista de dependências e as versões compatíveis, elas devem ser conferidas e se necessário, ajustadas no projeto.
 ```
@@ -71,7 +71,6 @@ Veja abaixo a lista de dependências e as versões compatíveis, elas devem ser 
     "typescript": "~4.2.3"
   }
 ```
-
 ## Visão geral
 Após instalar e executar o projeto, ao acessar o mesmo você irá ser direcionado para a tela principal da aplicação:
 ![image](https://user-images.githubusercontent.com/37172038/127805230-3cb51617-9679-4192-a26f-79b0e6492804.png)
