@@ -4,7 +4,7 @@ Esta aplicação web tem como objetivo o lançamento de notas e faltas por bimes
 
 ### Escopo
 Criar um projeto Java/Angular que possibilite o lançamento de notas e faltas de alunos por bimestre.
-- Permite visualizar a lista de alunos seguido das notas e a situação final
+- Permite visualizar a lista de alunos
 - Visualizar a frequência escolar de cada aluno
 - Inserir notas e faltas por bimestre
 - Visualizar o boletim escolar de cada aluno
@@ -22,7 +22,7 @@ Para utilizar o projeto corretamente é pré-requisito ter o Node.js instalado (
 
 Instalando com npm:
 
-```npm i -g @angular/cli@12```
+```npm i -g @angular/cli```
 
 Antes de executar a instalação é necessário verificar as dependências do seu projeto, algumas delas precisam estar de acordo com a versão do Angular (elas podem ser encontradas no arquivo package.json localizado na raiz da aplicação).
 
@@ -68,8 +68,8 @@ O JSON Server é um pacote npm que permite simular uma API e isso facilita muito
 - Dentro do diretório 'avaliacao-java-angular', instale as dependências usando ```npm install```
 
 ## Como executar
-- Execute ```ng serve``` para executar a versão de desenvolvimento. Depois acesse ```http://localhost:4200/```. 
-- O servidor de endpoints JSON-server já estará rodando, sse caso desejar a API poderá ser acessada via ```http://localhost:3000/alunos```
+- Execute ```ng serve``` para startar a versão de desenvolvimento. Depois acesse ```http://localhost:4200/```. 
+- O servidor de endpoints JSON-server já estará rodando, se caso desejar a API poderá ser acessada via ```http://localhost:3000/alunos```
 
 ## Como compilar/construir
 - Execute ```ng build``` para buildar o projeto. Para buildar a versão de produção adicione a flag ```--prod```. Os arquivos serão armazenados do diretório ```dist```.
