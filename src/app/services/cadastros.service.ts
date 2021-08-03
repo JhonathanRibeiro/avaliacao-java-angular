@@ -9,14 +9,15 @@ import { Aluno } from '../models/aluno.model';
 })
 export class CadastrosService {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient) { }
 
   public postAluno(aluno: any): Observable<any> {
-    return this.http.post<any>(environment.api+'/alunos', aluno);
+    return this.http.post<any>(environment.api + '/alunos', aluno);
   }
 
   public updateAluno(aluno: Aluno): Observable<Aluno> {
     const url = `${environment.api}/alunos/${aluno.id}`;
-    return this.http.put<Aluno>(url, aluno);
+    return this.http.put<Aluno>(url, aluno)
   }
 }

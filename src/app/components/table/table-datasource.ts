@@ -33,7 +33,7 @@ export class TableDataSource extends DataSource<Aluno> {
           return this.getPagedData(this.getSortedData([...this.data ]));
         }));
     } else {
-      throw Error('Please set the paginator and sort on the data source before connecting.');
+      throw Error('');
     }
   }
 

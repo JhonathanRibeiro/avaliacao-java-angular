@@ -30,19 +30,48 @@ export class UpdateComponent implements OnInit {
     this.listaALuno();
   }
 
-  atualizar(): void {
+  atualizar() {
+    //inputs das faltas
     const f1 = parseInt((document.querySelector('#f1') as HTMLInputElement).value);
     const f2 = parseInt((document.querySelector('#f2') as HTMLInputElement).value);
     const f3 = parseInt((document.querySelector('#f3') as HTMLInputElement).value);
     const f4 = parseInt((document.querySelector('#f4') as HTMLInputElement).value);
-    if (f1 > 40 || f2 > 40 || f3 > 40 || f4 > 40) {
-      this.msg.showWarningMessage('O número de faltas não pode ser maior do que 40.');
-    } else {
-      this.service.updateAluno(this.aluno).subscribe(() => {
-        this.msg.showSuccessMessage(`Registro do aluno ${this.aluno.nome} atualizado com sucesso!`);
-        this.router.navigate(['/']);
-      });
-    }
+    //nodelists com os elementos HTML - inputs das notas
+    const pbn = document.querySelectorAll('.pbn');
+    const sbn = document.querySelectorAll('.sbn');
+    const tbn = document.querySelectorAll('.tbn');
+    const qbn = document.querySelectorAll('.qbn');
+    //armazenando a mensagem de erro em uma const para melhorar a legibilidade do codigo.
+    const message = this.msg.showWarningMessage('A nota não pode ser maior do que o peso da atividade.')
+    //convertendo NodeList em array
+    const arrPbn = Array.from(pbn) //array com os inputs das notas do primeiro bimestre
+    const arrSbn = Array.from(sbn) //array com os inputs das notas do segundo bimestre
+    const arrTbn = Array.from(tbn) //array com os inputs das notas do terceiro bimestre
+    const arrQbn = Array.from(qbn) //array com os inputs das notas do quarto bimestre
+    // ira concatenar os arrays que contem os dados dos bimestres.
+    const arrBimestres = arrPbn.concat(arrSbn, arrTbn, arrQbn)
+    //iterando o array de bimestres para validar os dados.
+    arrBimestres.map(el => {
+      const nota = parseFloat((el as HTMLInputElement).value);
+      const elementName = (el as HTMLInputElement).name;
+
+      if (elementName == 'pbn1' && nota > 1.5 || elementName == 'pbn2' && nota > 2.5 || elementName == 'pbn3' && nota > 3 || elementName == 'pbn4' && nota > 3) {
+        return message;
+      } else if (elementName == 'sbn1' && nota > 1.5 || elementName == 'sbn2' && nota > 2.5 || elementName == 'sbn3' && nota > 3 || elementName == 'sbn4' && nota > 3) {
+        return message;
+      } else if (elementName == 'tbn1' && nota > 1.5 || elementName == 'tbn2' && nota > 2.5 || elementName == 'tbn3' && nota > 3 || elementName == 'tbn4' && nota > 3) {
+        return message;
+      } else if (elementName == 'qbn1' && nota > 1.5 || elementName == 'qbn2' && nota > 2.5 || elementName == 'qbn3' && nota > 3 || elementName == 'qbn4' && nota > 3) {
+        return message;
+      } if (f1 > 40 || f2 > 40 || f3 > 40 || f4 > 40) {
+        return this.msg.showWarningMessage('O número de faltas não pode ser maior do que 40.');
+      } else {
+        this.service.updateAluno(this.aluno).subscribe(() => {
+          this.msg.showSuccessMessage(`Registro do aluno ${this.aluno.nome} atualizado com sucesso!`);
+          // this.router.navigate(['/']);
+        });
+      }
+    });
   }
 
   listaALuno(): void {
