@@ -8,13 +8,33 @@ export class MessageService {
 
   constructor(private snackBar: MatSnackBar) { }
 
-  showMessage(msg: string): void {
+  showSuccessMessage(msg: string): void {
     this.snackBar.open(msg, '', {
       duration: 3000,
       horizontalPosition: "right",
       verticalPosition: "top",
       panelClass: ['alert-success']
-    })
+    });
   }
+  showFailMessage(msg: string): void {
+    this.snackBar.open(msg, '', {
+      duration: 3000,
+      horizontalPosition: "right",
+      verticalPosition: "top",
+      panelClass: ['alert-danger']
+    });
+  }
+  
+  showWarningMessage(msg: string): void {
+    this.snackBar.open(msg, '', {
+      duration: 3000,
+      horizontalPosition: "right",
+      verticalPosition: "top",
+      panelClass: ['alert-warning']
+    });
+  }
+
+
+
 
 }

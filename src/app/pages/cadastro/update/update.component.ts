@@ -36,10 +36,10 @@ export class UpdateComponent implements OnInit {
     const f3 = parseInt((document.querySelector('#f3') as HTMLInputElement).value);
     const f4 = parseInt((document.querySelector('#f4') as HTMLInputElement).value);
     if(f1 > 40 || f2 > 40 || f3 > 40 || f4 > 40) {
-      alert('O número de faltas não pode ser maior do que 40.')
+      this.msg.showWarningMessage('O número de faltas não pode ser maior do que 40.');
     } else {
      this.service.updateAluno(this.aluno).subscribe(() => {
-       this.msg.showMessage(`Registro do aluno ${this.aluno.nome} atualizado com sucesso!`);
+       this.msg.showSuccessMessage(`Registro do aluno ${this.aluno.nome} atualizado com sucesso!`);
        this.router.navigate(['/']);
      });
     }
