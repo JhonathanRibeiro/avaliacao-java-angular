@@ -22,9 +22,9 @@ export class DiarioEscolarComponent implements OnInit {
   listaAlunos() {
       this.pesquisa.getAlunos().subscribe(alunos => {
         this.alunos = alunos;
+        this.msg.showInfoMessage('Bem vindo! :)');
       }, err =>{
         this.msg.showFailMessage(`A API pode não ter sido inicializada, verifique e tente novamente.`)
       });
-     
   }
 }
