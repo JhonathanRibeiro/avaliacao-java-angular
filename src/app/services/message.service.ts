@@ -34,6 +34,17 @@ export class MessageService {
     });
   }
 
+  showInfoMessage(msg: string): void {
+    this.snackBar.open(msg, '', {
+      duration: 3000,
+      horizontalPosition: "right",
+      verticalPosition: "top",
+      panelClass: ['alert-info']
+    });
+  }
+
+  
+
 
 
 

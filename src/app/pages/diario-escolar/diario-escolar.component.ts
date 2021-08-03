@@ -1,5 +1,6 @@
 import { PesquisaService } from './../../services/pesquisa.service';
 import { Component, OnInit } from '@angular/core';
+import { MessageService } from 'src/app/services/message.service';
 
 @Component({
   selector: 'app-diario-escolar',
@@ -11,25 +12,19 @@ export class DiarioEscolarComponent implements OnInit {
 
   constructor(
     private pesquisa: PesquisaService,
+    private msg: MessageService
   ) { }
 
   ngOnInit(): void {
-    this.removeClasseCss();
     this.listaAlunos();
   }
 
   listaAlunos() {
-    this.pesquisa.getAlunos().subscribe(alunos => {
-      this.alunos = alunos;
-    });
-  }
-  
-  removeClasseCss(): void {
-    /**
-     * Remove class css do material-ui para alinhar os ícones
-     * dos botões de ações.
-     */
-    document.querySelectorAll('.mat-button-wrapper')
-      .forEach((item) => { item.classList.remove('mat-button-wrapper') })
+      this.pesquisa.getAlunos().subscribe(alunos => {
+        this.alunos = alunos;
+      }, err =>{
+        this.msg.showFailMessage(`A API pode não ter sido inicializada, verifique e tente novamente.`)
+      });
+     
   }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Aluno } from 'src/app/models/aluno.model';
+import { MessageService } from 'src/app/services/message.service';
 import { PesquisaService } from 'src/app/services/pesquisa.service';
 
 @Component({
@@ -31,6 +32,7 @@ export class BoletimComponent implements OnInit {
   constructor(
     private pesquisa: PesquisaService,
     private route: ActivatedRoute,
+    private msg: MessageService
   ) { }
 
   ngOnInit(): void {
@@ -43,27 +45,31 @@ export class BoletimComponent implements OnInit {
       this.aluno = alunos
 
       this.aluno.bimestres.filter((res: any) => {
-        this.totalfaltas = this.totalfaltas + parseInt(res.faltas)
+        try {
+          this.totalfaltas = this.totalfaltas + parseInt(res.faltas)
 
-        this.presenca = parseInt(this.calculoFrequencia(this.totalfaltas).toFixed(2))
-        const result = Array(res);
-        
-        const gradList = [
-          res.n1,
-          res.n2,
-          res.n3,
-          res.n4
-        ]
+          this.presenca = parseInt(this.calculoFrequencia(this.totalfaltas).toFixed(2))
+          const result = Array(res);
 
-        const media = parseFloat(this.getMediaBimestral(gradList).toFixed(2));
-        this.mediaBimestral(media, result, res);
+          const gradList = [
+            res.n1,
+            res.n2,
+            res.n3,
+            res.n4
+          ]
 
-        if(this.presenca < 75 && this.mediafinal < 5) {
-          this.situacao = 'Reprovado';
-        } else if (this.mediafinal >= 5 && this.mediafinal < 6) {
-          this.situacao = 'Recuperação';
-        } else {
-          this.situacao = 'Aprovado';
+          const media = parseFloat(this.getMediaBimestral(gradList).toFixed(2));
+          this.mediaBimestral(media, result, res);
+
+          if (this.presenca < 75 && this.mediafinal < 5) {
+            this.situacao = 'Reprovado';
+          } else if (this.mediafinal >= 5 && this.mediafinal < 6) {
+            this.situacao = 'Recuperação';
+          } else {
+            this.situacao = 'Aprovado';
+          }
+        } catch (error) {
+          this.msg.showFailMessage(error);
         }
       });
     });
@@ -98,7 +104,7 @@ export class BoletimComponent implements OnInit {
     return a;
   }
 
-  public mediaBimestral(media: number, result:any, res: any): void {
+  public mediaBimestral(media: number, result: any, res: any): void {
     switch (res.id) {
       case 1:
         this.primeirobimestre = result;
