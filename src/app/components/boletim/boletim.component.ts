@@ -45,7 +45,6 @@ export class BoletimComponent implements OnInit {
       this.aluno = alunos
 
       this.aluno.bimestres.filter((res: any) => {
-        try {
           this.totalfaltas = this.totalfaltas + parseInt(res.faltas)
 
           this.presenca = parseInt(this.calculoFrequencia(this.totalfaltas).toFixed(2))
@@ -68,10 +67,9 @@ export class BoletimComponent implements OnInit {
           } else {
             this.situacao = 'Aprovado';
           }
-        } catch (error) {
-          this.msg.showFailMessage(error);
-        }
       });
+    }, err =>{
+      this.msg.showFailMessage(err);
     });
   }
 
@@ -135,5 +133,4 @@ export class BoletimComponent implements OnInit {
 
     this.mediafinal = this.getMediaFinal(this.mediasporbimestre)
   }
-
 }
