@@ -69,7 +69,7 @@ export class UpdateComponent implements OnInit {
         }
       });
     }, err => {
-      this.msg.showFailMessage(`Não foi possível exibir os registros, por favor, verifique se a API está rodando e tente novamente.}`);
+      this.msg.showFailMessage(`Não foi possível exibir os registros, por favor, verifique se a API está rodando e tente novamente.`);
     });
   }
 }

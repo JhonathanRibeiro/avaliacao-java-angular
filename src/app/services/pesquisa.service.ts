@@ -18,5 +18,4 @@ export class PesquisaService {
     const url = `${environment.api}/alunos/${id}`;
     return this.http.get<Aluno[]>(url);
   }
-
 }
