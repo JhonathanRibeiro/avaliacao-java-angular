@@ -32,10 +32,10 @@ export class UpdateComponent implements OnInit {
 
   atualizar() {
     //inputs das faltas
-    const f1 = parseInt((document.querySelector('#f1') as HTMLInputElement).value);
-    const f2 = parseInt((document.querySelector('#f2') as HTMLInputElement).value);
-    const f3 = parseInt((document.querySelector('#f3') as HTMLInputElement).value);
-    const f4 = parseInt((document.querySelector('#f4') as HTMLInputElement).value);
+    const FALTAS_PRIMEIRO_BIMETRE = parseInt((document.querySelector('#f1') as HTMLInputElement).value);
+    const FALTAS_SEGUNDO_BIMETRE = parseInt((document.querySelector('#f2') as HTMLInputElement).value);
+    const FALTAS_TERCEIRO_BIMETRE = parseInt((document.querySelector('#f3') as HTMLInputElement).value);
+    const FALTAS_QUARTO_BIMETRE = parseInt((document.querySelector('#f4') as HTMLInputElement).value);
     //nodelists com os elementos HTML - inputs das notas
     const NOTAS_PRIMEIRO_BIMESTRE = document.querySelectorAll('.pbn');
     const NOTAS_SEGUNDO_BIMESTRE = document.querySelectorAll('.sbn');
@@ -45,9 +45,9 @@ export class UpdateComponent implements OnInit {
     const message = this.msg.showWarningMessage('A nota não pode ser maior do que o peso da atividade.')
     //convertendo NodeList em array
     const ARRAY_NOTAS_PRIMEIRO_BIMESTRE = Array.from(NOTAS_PRIMEIRO_BIMESTRE) //array com os inputs das notas do primeiro bimestre
-    const ARRAY_NOTAS_SEGUNDO_BIMESTRE  = Array.from(NOTAS_SEGUNDO_BIMESTRE) //array com os inputs das notas do segundo bimestre
+    const ARRAY_NOTAS_SEGUNDO_BIMESTRE = Array.from(NOTAS_SEGUNDO_BIMESTRE) //array com os inputs das notas do segundo bimestre
     const ARRAY_NOTAS_TERCEIRO_BIMESTRE = Array.from(NOTAS_TERCEIRO_BIMESTRE) //array com os inputs das notas do terceiro bimestre
-    const ARRAY_NOTAS_QUARTO_BIMESTRE   = Array.from(NOTAS_QUARTO_BIMESTRE) //array com os inputs das notas do quarto bimestre
+    const ARRAY_NOTAS_QUARTO_BIMESTRE = Array.from(NOTAS_QUARTO_BIMESTRE) //array com os inputs das notas do quarto bimestre
     // ira concatenar os arrays que contem os dados dos bimestres.
     const ARRAY_NOTAS_BIMESTRES = ARRAY_NOTAS_PRIMEIRO_BIMESTRE.concat(
       ARRAY_NOTAS_SEGUNDO_BIMESTRE,
@@ -73,45 +73,50 @@ export class UpdateComponent implements OnInit {
       } else if (NOME_ELEMENTO == 'qbn1' && NOTA > 1.5 || NOME_ELEMENTO == 'qbn2' && NOTA > 2.5 || NOME_ELEMENTO == 'qbn3' && NOTA > 3 || NOME_ELEMENTO == 'qbn4' && NOTA > 3) {
         salvar = false;
         return message;
-      } else if (f1 > 40 || f2 > 40 || f3 > 40 || f4 > 40) {
-        salvar = false;
-        return this.msg.showWarningMessage('O número de faltas não pode ser maior do que 40.');
+      } else if (
+        FALTAS_PRIMEIRO_BIMETRE > 40 ||
+        FALTAS_SEGUNDO_BIMETRE > 40 ||
+        FALTAS_TERCEIRO_BIMETRE > 40 ||
+        FALTAS_QUARTO_BIMETRE > 40
+      ) {
+      salvar = false;
+      return this.msg.showWarningMessage('O número de faltas não pode ser maior do que 40.');
+    }
+  });
+
+  if(salvar) {
+    this.service.updateAluno(this.aluno).subscribe(() => {
+      this.msg.showSuccessMessage(`Registro do aluno ${this.aluno.nome} atualizado com sucesso!`);
+      // this.router.navigate(['/']);
+    });
+  }
+}
+
+listaALuno(): void {
+  const id = this.route.snapshot.paramMap.get('id');
+  this.pesquisa.getAlunoById(id).subscribe(alunos => {
+    this.aluno = alunos
+
+    this.aluno.bimestres.filter((res: any) => {
+      switch (res.id) {
+        case 1:
+          this.primeirobimestre = Array(res)
+          break;
+        case 2:
+          this.segundobimestre = Array(res)
+          break;
+        case 3:
+          this.terceirobimestre = Array(res)
+          break;
+        case 4:
+          this.quartobimestre = Array(res)
+          break;
+        default:
+          break;
       }
     });
-
-    if (salvar) {
-      this.service.updateAluno(this.aluno).subscribe(() => {
-        this.msg.showSuccessMessage(`Registro do aluno ${this.aluno.nome} atualizado com sucesso!`);
-        // this.router.navigate(['/']);
-      });
-    }
-  }
-
-  listaALuno(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.pesquisa.getAlunoById(id).subscribe(alunos => {
-      this.aluno = alunos
-
-      this.aluno.bimestres.filter((res: any) => {
-        switch (res.id) {
-          case 1:
-            this.primeirobimestre = Array(res)
-            break;
-          case 2:
-            this.segundobimestre = Array(res)
-            break;
-          case 3:
-            this.terceirobimestre = Array(res)
-            break;
-          case 4:
-            this.quartobimestre = Array(res)
-            break;
-          default:
-            break;
-        }
-      });
-    }, err => {
-      this.msg.showFailMessage(`Não foi possível exibir os registros, por favor, verifique se a API está rodando e tente novamente.`);
-    });
-  }
+  }, err => {
+    this.msg.showFailMessage(`Não foi possível exibir os registros, por favor, verifique se a API está rodando e tente novamente.`);
+  });
+}
 }
