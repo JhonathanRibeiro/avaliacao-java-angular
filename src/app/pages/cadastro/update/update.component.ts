@@ -33,21 +33,21 @@ export class UpdateComponent implements OnInit {
   atualizar() {
     //inputs das faltas
     const FALTAS_PRIMEIRO_BIMETRE = parseInt((document.querySelector('#f1') as HTMLInputElement).value);
-    const FALTAS_SEGUNDO_BIMETRE = parseInt((document.querySelector('#f2') as HTMLInputElement).value);
+    const FALTAS_SEGUNDO_BIMETRE  = parseInt((document.querySelector('#f2') as HTMLInputElement).value);
     const FALTAS_TERCEIRO_BIMETRE = parseInt((document.querySelector('#f3') as HTMLInputElement).value);
-    const FALTAS_QUARTO_BIMETRE = parseInt((document.querySelector('#f4') as HTMLInputElement).value);
+    const FALTAS_QUARTO_BIMETRE   = parseInt((document.querySelector('#f4') as HTMLInputElement).value);
     //nodelists com os elementos HTML - inputs das notas
     const NOTAS_PRIMEIRO_BIMESTRE = document.querySelectorAll('.pbn');
-    const NOTAS_SEGUNDO_BIMESTRE = document.querySelectorAll('.sbn');
+    const NOTAS_SEGUNDO_BIMESTRE  = document.querySelectorAll('.sbn');
     const NOTAS_TERCEIRO_BIMESTRE = document.querySelectorAll('.tbn');
-    const NOTAS_QUARTO_BIMESTRE = document.querySelectorAll('.qbn');
+    const NOTAS_QUARTO_BIMESTRE   = document.querySelectorAll('.qbn');
     //armazenando a mensagem de erro em uma const para melhorar a legibilidade do codigo.
     const message = this.msg.showWarningMessage('A nota não pode ser maior do que o peso da atividade.')
     //convertendo NodeList em array
     const ARRAY_NOTAS_PRIMEIRO_BIMESTRE = Array.from(NOTAS_PRIMEIRO_BIMESTRE) //array com os inputs das notas do primeiro bimestre
-    const ARRAY_NOTAS_SEGUNDO_BIMESTRE = Array.from(NOTAS_SEGUNDO_BIMESTRE) //array com os inputs das notas do segundo bimestre
+    const ARRAY_NOTAS_SEGUNDO_BIMESTRE  = Array.from(NOTAS_SEGUNDO_BIMESTRE) //array com os inputs das notas do segundo bimestre
     const ARRAY_NOTAS_TERCEIRO_BIMESTRE = Array.from(NOTAS_TERCEIRO_BIMESTRE) //array com os inputs das notas do terceiro bimestre
-    const ARRAY_NOTAS_QUARTO_BIMESTRE = Array.from(NOTAS_QUARTO_BIMESTRE) //array com os inputs das notas do quarto bimestre
+    const ARRAY_NOTAS_QUARTO_BIMESTRE   = Array.from(NOTAS_QUARTO_BIMESTRE) //array com os inputs das notas do quarto bimestre
     // ira concatenar os arrays que contem os dados dos bimestres.
     const ARRAY_NOTAS_BIMESTRES = ARRAY_NOTAS_PRIMEIRO_BIMESTRE.concat(
       ARRAY_NOTAS_SEGUNDO_BIMESTRE,
