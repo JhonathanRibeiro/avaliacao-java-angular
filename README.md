@@ -85,5 +85,6 @@ O segundo ícone irá redirecionar para a tela de lançamento de notas e faltas,
 
 Caso o usuário tente registrar uma nota maior do que o peso da avaliação ou a falta seja maior do que 40(Valor estabelecido pelo roteiro, cada bimestre terá 40 dias) irá exibir uma mensgem de alerta informando a inconsistência
 ![image](https://user-images.githubusercontent.com/37172038/128404911-a87b82b2-f7c2-4aba-aa58-4b43c3a78b91.png)
-![image](https://user-images.githubusercontent.com/37172038/128404946-a816caf1-52fc-4af1-b450-5c0123e6e24e.png)
+![image](https://user-images.githubusercontent.com/37172038/128405086-3391e5f3-97bc-40b7-aea3-b0afe16a129b.png)
+
 
