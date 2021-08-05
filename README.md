@@ -77,7 +77,7 @@ Observe que existe apenas um link no menu de navegação a esquerda, que represe
 ![image](https://user-images.githubusercontent.com/37172038/127805351-709ec419-4270-4c74-8c01-e03be9009663.png)
 
 O primeiro ícone irá redirecionar para a tela do boletim escolar, onde será possível visualizar as notas separadas por bimestres, a nota final, frequência escolar e a situação do aluno:
-![image](https://user-images.githubusercontent.com/37172038/127805443-e8169406-36fe-4957-b624-aa59723e7dcf.png)
+![image](https://user-images.githubusercontent.com/37172038/128362227-cd67be7d-158e-4d3d-bdfe-043569e3a9b6.png)
 obs.Cada um dos alunos possui uma das situações possíveis conforme as condições propostas no roteiro do projeto
 
 O segundo ícone irá redirecionar para a tela de lançamento de notas e faltas, onde será possível atualizar as notas e faltas dos alunos separados por bimestre:
