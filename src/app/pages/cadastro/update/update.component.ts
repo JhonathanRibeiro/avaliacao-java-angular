@@ -37,36 +37,40 @@ export class UpdateComponent implements OnInit {
     const f3 = parseInt((document.querySelector('#f3') as HTMLInputElement).value);
     const f4 = parseInt((document.querySelector('#f4') as HTMLInputElement).value);
     //nodelists com os elementos HTML - inputs das notas
-    const pbn = document.querySelectorAll('.pbn');
-    const sbn = document.querySelectorAll('.sbn');
-    const tbn = document.querySelectorAll('.tbn');
-    const qbn = document.querySelectorAll('.qbn');
+    const NOTAS_PRIMEIRO_BIMESTRE = document.querySelectorAll('.pbn');
+    const NOTAS_SEGUNDO_BIMESTRE = document.querySelectorAll('.sbn');
+    const NOTAS_TERCEIRO_BIMESTRE = document.querySelectorAll('.tbn');
+    const NOTAS_QUARTO_BIMESTRE = document.querySelectorAll('.qbn');
     //armazenando a mensagem de erro em uma const para melhorar a legibilidade do codigo.
     const message = this.msg.showWarningMessage('A nota não pode ser maior do que o peso da atividade.')
     //convertendo NodeList em array
-    const arrPbn = Array.from(pbn) //array com os inputs das notas do primeiro bimestre
-    const arrSbn = Array.from(sbn) //array com os inputs das notas do segundo bimestre
-    const arrTbn = Array.from(tbn) //array com os inputs das notas do terceiro bimestre
-    const arrQbn = Array.from(qbn) //array com os inputs das notas do quarto bimestre
+    const ARRAY_NOTAS_PRIMEIRO_BIMESTRE = Array.from(NOTAS_PRIMEIRO_BIMESTRE) //array com os inputs das notas do primeiro bimestre
+    const ARRAY_NOTAS_SEGUNDO_BIMESTRE  = Array.from(NOTAS_SEGUNDO_BIMESTRE) //array com os inputs das notas do segundo bimestre
+    const ARRAY_NOTAS_TERCEIRO_BIMESTRE = Array.from(NOTAS_TERCEIRO_BIMESTRE) //array com os inputs das notas do terceiro bimestre
+    const ARRAY_NOTAS_QUARTO_BIMESTRE   = Array.from(NOTAS_QUARTO_BIMESTRE) //array com os inputs das notas do quarto bimestre
     // ira concatenar os arrays que contem os dados dos bimestres.
-    const arrBimestres = arrPbn.concat(arrSbn, arrTbn, arrQbn)
+    const ARRAY_NOTAS_BIMESTRES = ARRAY_NOTAS_PRIMEIRO_BIMESTRE.concat(
+      ARRAY_NOTAS_SEGUNDO_BIMESTRE,
+      ARRAY_NOTAS_TERCEIRO_BIMESTRE,
+      ARRAY_NOTAS_QUARTO_BIMESTRE)
     //iterando o array de bimestres para validar os dados.
     let salvar = true;
-    arrBimestres.forEach(el => {
-      debugger
-      const nota = parseFloat((el as HTMLInputElement).value);
-      const elementName = (el as HTMLInputElement).name;
 
-      if (elementName == 'pbn1' && nota > 1.5 || elementName == 'pbn2' && nota > 2.5 || elementName == 'pbn3' && nota > 3 || elementName == 'pbn4' && nota > 3) {
+    ARRAY_NOTAS_BIMESTRES.forEach(el => {
+      debugger
+      const NOTA = parseFloat((el as HTMLInputElement).value);
+      const NOME_ELEMENTO = (el as HTMLInputElement).name;
+
+      if (NOME_ELEMENTO == 'pbn1' && NOTA > 1.5 || NOME_ELEMENTO == 'pbn2' && NOTA > 2.5 || NOME_ELEMENTO == 'pbn3' && NOTA > 3 || NOME_ELEMENTO == 'pbn4' && NOTA > 3) {
         salvar = false;
         return message;
-      } else if (elementName == 'sbn1' && nota > 1.5 || elementName == 'sbn2' && nota > 2.5 || elementName == 'sbn3' && nota > 3 || elementName == 'sbn4' && nota > 3) {
+      } else if (NOME_ELEMENTO == 'sbn1' && NOTA > 1.5 || NOME_ELEMENTO == 'sbn2' && NOTA > 2.5 || NOME_ELEMENTO == 'sbn3' && NOTA > 3 || NOME_ELEMENTO == 'sbn4' && NOTA > 3) {
         salvar = false;
         return message;
-      } else if (elementName == 'tbn1' && nota > 1.5 || elementName == 'tbn2' && nota > 2.5 || elementName == 'tbn3' && nota > 3 || elementName == 'tbn4' && nota > 3) {
+      } else if (NOME_ELEMENTO == 'tbn1' && NOTA > 1.5 || NOME_ELEMENTO == 'tbn2' && NOTA > 2.5 || NOME_ELEMENTO == 'tbn3' && NOTA > 3 || NOME_ELEMENTO == 'tbn4' && NOTA > 3) {
         salvar = false;
         return message;
-      } else if (elementName == 'qbn1' && nota > 1.5 || elementName == 'qbn2' && nota > 2.5 || elementName == 'qbn3' && nota > 3 || elementName == 'qbn4' && nota > 3) {
+      } else if (NOME_ELEMENTO == 'qbn1' && NOTA > 1.5 || NOME_ELEMENTO == 'qbn2' && NOTA > 2.5 || NOME_ELEMENTO == 'qbn3' && NOTA > 3 || NOME_ELEMENTO == 'qbn4' && NOTA > 3) {
         salvar = false;
         return message;
       } else if (f1 > 40 || f2 > 40 || f3 > 40 || f4 > 40) {
@@ -81,7 +85,6 @@ export class UpdateComponent implements OnInit {
         // this.router.navigate(['/']);
       });
     }
-
   }
 
   listaALuno(): void {
