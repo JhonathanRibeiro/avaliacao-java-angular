@@ -82,3 +82,8 @@ obs.Cada um dos alunos possui uma das situações possíveis conforme as condiç
 
 O segundo ícone irá redirecionar para a tela de lançamento de notas e faltas, onde será possível atualizar as notas e faltas dos alunos separados por bimestre:
 ![image](https://user-images.githubusercontent.com/37172038/127805620-ce59e4a9-c53b-4d52-99f0-464abc3d18a0.png)
+
+Caso o usuário tente registrar uma nota maior do que o peso da avaliação ou a falta seja maior do que 40(Valor estabelecido pelo roteiro, cada bimestre terá 40 dias) irá exibir uma mensgem de alerta informando a inconsistência
+![image](https://user-images.githubusercontent.com/37172038/128404911-a87b82b2-f7c2-4aba-aa58-4b43c3a78b91.png)
+![image](https://user-images.githubusercontent.com/37172038/128404946-a816caf1-52fc-4af1-b450-5c0123e6e24e.png)
+
