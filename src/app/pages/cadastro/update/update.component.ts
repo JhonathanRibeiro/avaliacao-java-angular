@@ -51,31 +51,31 @@ export class UpdateComponent implements OnInit {
     // ira concatenar os arrays que contem os dados dos bimestres.
     const arrBimestres = arrPbn.concat(arrSbn, arrTbn, arrQbn)
     //iterando o array de bimestres para validar os dados.
-    let deuboa = true;
+    let salvar = true;
     arrBimestres.forEach(el => {
       debugger
       const nota = parseFloat((el as HTMLInputElement).value);
       const elementName = (el as HTMLInputElement).name;
 
       if (elementName == 'pbn1' && nota > 1.5 || elementName == 'pbn2' && nota > 2.5 || elementName == 'pbn3' && nota > 3 || elementName == 'pbn4' && nota > 3) {
-        deuboa = false;
+        salvar = false;
         return message;
       } else if (elementName == 'sbn1' && nota > 1.5 || elementName == 'sbn2' && nota > 2.5 || elementName == 'sbn3' && nota > 3 || elementName == 'sbn4' && nota > 3) {
-        deuboa = false;
+        salvar = false;
         return message;
       } else if (elementName == 'tbn1' && nota > 1.5 || elementName == 'tbn2' && nota > 2.5 || elementName == 'tbn3' && nota > 3 || elementName == 'tbn4' && nota > 3) {
-        deuboa = false;
+        salvar = false;
         return message;
       } else if (elementName == 'qbn1' && nota > 1.5 || elementName == 'qbn2' && nota > 2.5 || elementName == 'qbn3' && nota > 3 || elementName == 'qbn4' && nota > 3) {
-        deuboa = false;
+        salvar = false;
         return message;
       } else if (f1 > 40 || f2 > 40 || f3 > 40 || f4 > 40) {
-        deuboa = false;
+        salvar = false;
         return this.msg.showWarningMessage('O número de faltas não pode ser maior do que 40.');
       }
     });
 
-    if (deuboa) {
+    if (salvar) {
       this.service.updateAluno(this.aluno).subscribe(() => {
         this.msg.showSuccessMessage(`Registro do aluno ${this.aluno.nome} atualizado com sucesso!`);
         // this.router.navigate(['/']);
