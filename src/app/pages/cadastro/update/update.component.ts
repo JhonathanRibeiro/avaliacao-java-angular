@@ -56,14 +56,18 @@ export class UpdateComponent implements OnInit {
       const elementName = (el as HTMLInputElement).name;
 
       if (elementName == 'pbn1' && nota > 1.5 || elementName == 'pbn2' && nota > 2.5 || elementName == 'pbn3' && nota > 3 || elementName == 'pbn4' && nota > 3) {
-        return message;
+        message;
+        return true;
       } else if (elementName == 'sbn1' && nota > 1.5 || elementName == 'sbn2' && nota > 2.5 || elementName == 'sbn3' && nota > 3 || elementName == 'sbn4' && nota > 3) {
-        return message;
+         message;
+        return false;
       } else if (elementName == 'tbn1' && nota > 1.5 || elementName == 'tbn2' && nota > 2.5 || elementName == 'tbn3' && nota > 3 || elementName == 'tbn4' && nota > 3) {
-        return message;
+        message;
+        return false;
       } else if (elementName == 'qbn1' && nota > 1.5 || elementName == 'qbn2' && nota > 2.5 || elementName == 'qbn3' && nota > 3 || elementName == 'qbn4' && nota > 3) {
-        return message;
-      } if (f1 > 40 || f2 > 40 || f3 > 40 || f4 > 40) {
+        message;
+        return false;
+      } else if (f1 > 40 || f2 > 40 || f3 > 40 || f4 > 40) {
         return this.msg.showWarningMessage('O número de faltas não pode ser maior do que 40.');
       } else {
         this.service.updateAluno(this.aluno).subscribe(() => {
